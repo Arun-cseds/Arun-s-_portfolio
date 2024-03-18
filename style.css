@@ -1,141 +1,164 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap');
 
-/* CSS styles for the entire page */
-:root {
-    --bg: linear-gradient(115deg, #becf4f, #fad648, #a767e5, #12bcfe, #44ce7b);
-    --font: 'Bricolage Grotesque', sans-serif;
-}
-
-/* Add your existing CSS styles here */
-
+/* General Styles */
 body {
     font-family: var(--font);
-    background: url("https://images.unsplash.com/photo-1672009190560-12e7bade8d09");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    line-height: 1.4;
-    font-weight: 300;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(115deg, #becf4f, #fad648, #a767e5, #12bcfe, #44ce7b);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container Styles */
 .container {
-    max-width: 700px;
-    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
-    background: rgba(125, 125, 125, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(20px) saturate(130%);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.cover {
+    text-align: center;
+    padding: 50px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic img {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Navigation Styles */
+nav {
+    margin-bottom: 20px;
 }
 
 .tabs {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .tabs li {
-    display: inline-block;
-    padding: 10px 15px;
+    padding: 10px 20px;
     cursor: pointer;
-    margin-bottom: -2px;
-    font-weight: 400;
 }
 
 .tabs li.active {
-    border-bottom: 2px solid;
-    border-image: var(--bg);
-    border-image-slice: 1;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
 }
 
+.tabs li:not(.active):hover {
+    background-color: rgba(0, 123, 255, 0.8);
+}
+
+/* Tab Content Styles */
 .tab-content {
     display: none;
     padding: 20px 0;
-    padding-bottom: 0;
 }
 
 .tab-content.active {
     display: block;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 399px) {
-    .cover .profile-pic {
-        max-width: 80px;
-        max-height: 80px;
+/* Skills Styles */
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-list li {
+    margin-bottom: 10px;
+}
+
+.skill {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Project Styles */
+.project {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgba(0, 123, 255, 0.1);
+    border-left: 3px solid #007bff;
+}
+
+.project h3 {
+    margin-top: 0;
+}
+
+/* Contact Styles */
+#contact p {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
     }
 
-    .cover .profile-pic img {
-        max-width: 70px;
+    p {
+        font-size: 16px;
     }
 
+    .tabs li {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 576px) {
     h1 {
         font-size: 28px;
     }
 
     .tabs li {
-        padding: 8px;
+        padding: 8px 12px;
     }
-
-    .main {
-        padding: 15px;
-    }
-
-    .tab-content {
-        padding: 15px 0;
-        padding-bottom: 0;
-    }
-}
-
-/* Additional styles for more interactivity and colorfulness */
-.cover {
-    background: var(--bg);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
-}
-
-.profile-pic {
-    margin-bottom: 20px;
-}
-
-.tabs li {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    margin-right: 10px;
-    padding: 8px 15px;
-    cursor: pointer;
-}
-
-.tabs li.active {
-    background-color: rgba(255, 255, 255, 0.6);
-}
-
-.tabs li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.tabs li a:hover {
-    text-decoration: underline;
-}
-
-.tab-content {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 0 0 10px 10px;
-    padding: 20px;
-    margin-top: -2px;
-}
-
-.project {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
 }
