@@ -8,100 +8,134 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            color: #333;
             margin: 0;
             padding: 0;
-            background: linear-gradient(115deg, #ff7eb6, #17c3b2);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            background: linear-gradient(115deg, #becf4f, #fad648, #a767e5, #12bcfe, #44ce7b);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
         }
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        .floating-page {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .floating-page h1 {
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .floating-page p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .floating-page img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            max-width: 150px;
+            max-height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="profile-pic">
-            <img src="./alok.jpg" alt="Alok Nath Tiwari">
+        <div class="container">
+            <div class="cover">
+                <div class="profile-pic">
+                    <img src="./alok.jpg" alt="Alok Nath Tiwari">
+                </div>
+            </div>
         </div>
-        <h1>AlokNath Tiwari</h1>
-        <p>Data Engineer</p>
+        <nav>
+            <ul class="tabs">
+                <li class="active" data-target="about"><a href="#about">About Me</a></li>
+                <li data-target="skills"><a href="#skills">Skills</a></li>
+                <li data-target="projects"><a href="#projects">Projects</a></li>
+                <li data-target="contact"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul class="tabs">
-            <li class="active" data-target="about"><a href="#">About Me</a></li>
-            <li data-target="skills"><a href="#">Skills</a></li>
-            <li data-target="projects"><a href="#">Projects</a></li>
-            <li data-target="contact"><a href="#">Contact</a></li>
+    <div class="floating-page" id="about-content">
+        <span class="close-btn">&times;</span>
+        <img src="./alok.jpg" alt="Alok Nath Tiwari">
+        <h1>About Me</h1>
+        <p>I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology.</p>
+        <p>My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements.</p>
+        <p>I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology.</p>
+    </div>
+
+    <div class="floating-page" id="skills-content">
+        <span class="close-btn">&times;</span>
+        <h1>Skills</h1>
+        <ul>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Apache Airflow</li>
+            <li>PySpark</li>
+            <li>Docker</li>
+            <li>Delta Lake</li>
         </ul>
-    </nav>
+    </div>
 
-    <div class="container">
-        <section id="about" class="tab-content active">
-            <h2>About Me</h2>
-            <p>I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change. 🚀💡</p>
-            <p>My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements. 🌟</p>
-            <p>I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology. 🌐</p>
-        </section>
+    <div class="floating-page" id="projects-content">
+        <span class="close-btn">&times;</span>
+        <h1>Projects</h1>
+        <div class="project">
+            <h3>Project Title</h3>
+            <p>Description of the project...</p>
+        </div>
+        <!-- Add more project divs as needed -->
+    </div>
 
-        <section id="skills" class="tab-content">
-            <h2>Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>Apache Airflow</li>
-                <li>PySpark</li>
-                <li>Docker</li>
-                <li>Delta Lake</li>
-            </ul>
-        </section>
-
-        <section id="projects" class="tab-content">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project Title</h3>
-                <p>Description of the project...</p>
-            </div>
-            <!-- Add more project divs as needed -->
-        </section>
-
-        <section id="contact" class="tab-content">
-            <h2>Contact</h2>
-            <p>Email: aloknathtiwari2000@gmail.com</p>
-        </section>
+    <div class="floating-page" id="contact-content">
+        <span class="close-btn">&times;</span>
+        <h1>Contact</h1>
+        <p>Email: aloknathtiwari2000@gmail.com</p>
     </div>
 
     <script>
-        const tabs = document.querySelectorAll(".tabs li");
-        const tabContents = document.querySelectorAll(".tab-content");
-        let activeTab = 0;
+        document.querySelectorAll('.close-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                this.parentNode.style.display = 'none';
+            });
+        });
 
-        function showTab(tabIndex) {
-            tabs.forEach((tab) => tab.classList.remove("active"));
-            tabContents.forEach((content) => content.classList.remove("active"));
-            tabs[tabIndex].classList.add("active");
-            tabContents[tabIndex].classList.add("active");
-            activeTab = tabIndex;
-        }
-
-        function autoSwitchTabs() {
-            activeTab = (activeTab + 1) % tabs.length;
-            showTab(activeTab);
-        }
-
-        setInterval(autoSwitchTabs, 5000); // Change tab every 5 seconds
+        document.querySelectorAll('.tabs li').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.floating-page').forEach(function(page) {
+                    page.style.display = 'none';
+                });
+                var targetId = this.getAttribute('data-target') + '-content';
+                document.getElementById(targetId).style.display = 'block';
+            });
+        });
     </script>
 </body>
 </html>
