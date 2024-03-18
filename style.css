@@ -67,12 +67,12 @@ body {
 /* Media query for smaller screens */
 @media (max-width: 399px) {
     .cover .profile-pic {
-        max-width: 110px;
-        max-height: 110px;
+        max-width: 80px;
+        max-height: 80px;
     }
 
     .cover .profile-pic img {
-        max-width: 100px;
+        max-width: 70px;
     }
 
     h1 {
@@ -91,4 +91,51 @@ body {
         padding: 15px 0;
         padding-bottom: 0;
     }
+}
+
+/* Additional styles for more interactivity and colorfulness */
+.cover {
+    background: var(--bg);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.profile-pic {
+    margin-bottom: 20px;
+}
+
+.tabs li {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.tabs li.active {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.tabs li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.tabs li a:hover {
+    text-decoration: underline;
+}
+
+.tab-content {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 10px 10px;
+    padding: 20px;
+    margin-top: -2px;
+}
+
+.project {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
