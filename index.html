@@ -28,9 +28,14 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             overflow: hidden;
+            display: none;
         }
 
-        .floating-page h1 {
+        .floating-page.active {
+            display: block;
+        }
+
+        .floating-page h2 {
             color: #333;
             font-size: 24px;
             text-align: center;
@@ -82,58 +87,88 @@
         </nav>
     </header>
 
-    <div class="floating-page" id="about-content">
+    <section id="about" class="tab-content">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change. 🚀💡</p>
+            <p>My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements. 🌟</p>
+            <p>I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology. 🌐</p>
+        </div>
+    </section>
+
+    <section id="skills" class="tab-content">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Apache Airflow</li>
+                <li>PySpark</li>
+                <li>Docker</li>
+                <li>Delta Lake</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="tab-content">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project Title</h3>
+                <p>Description of the project...</p>
+            </div>
+            <!-- Add more project divs as needed -->
+        </div>
+    </section>
+
+    <section id="contact" class="tab-content">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: aloknathtiwari2000@gmail.com</p>
+        </div>
+    </section>
+
+    <div class="floating-page" id="floating-content">
         <span class="close-btn">&times;</span>
         <img src="./alok.jpg" alt="Alok Nath Tiwari">
-        <h1>About Me</h1>
-        <p>I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology.</p>
-        <p>My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements.</p>
-        <p>I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology.</p>
-    </div>
-
-    <div class="floating-page" id="skills-content">
-        <span class="close-btn">&times;</span>
-        <h1>Skills</h1>
-        <ul>
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Apache Airflow</li>
-            <li>PySpark</li>
-            <li>Docker</li>
-            <li>Delta Lake</li>
-        </ul>
-    </div>
-
-    <div class="floating-page" id="projects-content">
-        <span class="close-btn">&times;</span>
-        <h1>Projects</h1>
-        <div class="project">
-            <h3>Project Title</h3>
-            <p>Description of the project...</p>
-        </div>
-        <!-- Add more project divs as needed -->
-    </div>
-
-    <div class="floating-page" id="contact-content">
-        <span class="close-btn">&times;</span>
-        <h1>Contact</h1>
-        <p>Email: aloknathtiwari2000@gmail.com</p>
+        <h2>About Me</h2>
+        <p>I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change. 🚀💡</p>
+        <p>My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements. 🌟</p>
+        <p>I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology. 🌐</p>
     </div>
 
     <script>
-        document.querySelectorAll('.close-btn').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                this.parentNode.style.display = 'none';
+        const tabs = document.querySelectorAll('.tabs li');
+        let currentIndex = 0;
+
+        const showContent = (index) => {
+            document.querySelector('.floating-page.active').classList.remove('active');
+            document.querySelectorAll('.tabs li.active').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`.floating-page:nth-child(${index + 1})`).classList.add('active');
+            document.querySelectorAll(`.tabs li:nth-child(${index + 1})`).forEach(tab => tab.classList.add('active'));
+            currentIndex = index;
+        };
+
+        const changeContent = () => {
+            currentIndex = (currentIndex + 1) % tabs.length;
+            showContent(currentIndex);
+        };
+
+        const intervalId = setInterval(changeContent, 5000);
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                clearInterval(intervalId);
+                showContent(index);
             });
         });
 
-        document.querySelectorAll('.tabs li').forEach(function(tab) {
-            tab.addEventListener('click', function() {
-                document.querySelectorAll('.floating-page').forEach(function(page) {
-                    page.style.display = 'none';
+        document.querySelectorAll('.close-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                clearInterval(intervalId);
+                document.querySelectorAll('.floating-page').forEach(page => {
+                    page.classList.remove('active');
                 });
-                var targetId = this.getAttribute('data-target') + '-content';
-                document.getElementById(targetId).style.display = 'block';
             });
         });
     </script>
