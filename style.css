@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap');
 
+/* CSS styles for the entire page */
 :root {
     --bg: linear-gradient(115deg, #becf4f, #fad648, #a767e5, #12bcfe, #44ce7b);
     --font: 'Bricolage Grotesque', sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-}
+/* Add your existing CSS styles here */
 
 body {
     font-family: var(--font);
@@ -34,94 +33,62 @@ body {
     overflow: hidden;
 }
 
-nav {
-    text-align: center;
-    margin-top: 20px;
-}
-
-nav ul {
+.tabs {
     list-style-type: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: lightgray;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 50px;
-    color: white;
-}
-
-p {
-    color: white;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: justify;
-    margin: 20px;
-}
-
-.profile-pic {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.profile-pic img {
-    border-radius: 50%;
-    border: 5px solid white;
-    width: 150px;
-    height: 150px;
-}
-
-.project {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-}
-
-.project h3 {
-    margin-bottom: 10px;
-}
-
-.project p {
     margin: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-.contact {
-    text-align: center;
-    margin-top: 50px;
+.tabs li {
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: -2px;
+    font-weight: 400;
 }
 
-.contact p {
-    color: white;
-    font-size: 18px;
+.tabs li.active {
+    border-bottom: 2px solid;
+    border-image: var(--bg);
+    border-image-slice: 1;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
+.tab-content {
+    display: none;
+    padding: 20px 0;
+    padding-bottom: 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 399px) {
+    .cover .profile-pic {
+        max-width: 110px;
+        max-height: 110px;
+    }
+
+    .cover .profile-pic img {
+        max-width: 100px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .tabs li {
+        padding: 8px;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    .tab-content {
+        padding: 15px 0;
+        padding-bottom: 0;
     }
 }
-
-@media (max-width: 576px) {
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
-}
-
