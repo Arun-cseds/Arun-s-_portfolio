@@ -6,32 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlokNath Tiwari - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(115deg, #ff7eb6, #17c3b2);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
-
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-    </style>
 </head>
 <body>
-    <header>
+    <header class="cover">
         <div class="profile-pic">
             <img src="./alok.jpg" alt="Alok Nath Tiwari">
         </div>
@@ -83,25 +60,6 @@
         </section>
     </div>
 
-    <script>
-        const tabs = document.querySelectorAll(".tabs li");
-        const tabContents = document.querySelectorAll(".tab-content");
-        let activeTab = 0;
-
-        function showTab(tabIndex) {
-            tabs.forEach((tab) => tab.classList.remove("active"));
-            tabContents.forEach((content) => content.classList.remove("active"));
-            tabs[tabIndex].classList.add("active");
-            tabContents[tabIndex].classList.add("active");
-            activeTab = tabIndex;
-        }
-
-        function autoSwitchTabs() {
-            activeTab = (activeTab + 1) % tabs.length;
-            showTab(activeTab);
-        }
-
-        setInterval(autoSwitchTabs, 5000); // Change tab every 5 seconds
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
