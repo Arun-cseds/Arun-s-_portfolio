@@ -6,37 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlokNath Tiwari - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs li {
+            list-style-type: none;
+            margin: 0 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #666;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tabs li.active {
+            background-color: #333;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="cover">
-                <div class="profile-pic">
-                    <img src="./alok-passport.jpg" alt="Alok Nath Tiwari">
-                </div>
-            </div>
+        <div class="profile-pic">
+            <img src="./alok.jpg" alt="Alok Nath Tiwari">
         </div>
-        <nav>
-            <ul class="tabs">
-                <li class="active" data-target="about"><a href="#about">About Me</a></li>
-                <li data-target="skills"><a href="#skills">Skills</a></li>
-                <li data-target="projects"><a href="#projects">Projects</a></li>
-                <li data-target="contact"><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>AlokNath Tiwari</h1>
+        <p>Data Engineer</p>
     </header>
 
-    <section id="about" class="tab-content">
-        <div class="container">
+    <nav>
+        <ul class="tabs">
+            <li class="active" data-target="about"><a href="#">About Me</a></li>
+            <li data-target="skills"><a href="#">Skills</a></li>
+            <li data-target="projects"><a href="#">Projects</a></li>
+            <li data-target="contact"><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="tab-content active">
             <h2>About Me</h2>
             <p>I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change. 🚀💡</p>
             <p>My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements. 🌟</p>
             <p>I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology. 🌐</p>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="tab-content">
-        <div class="container">
+        <section id="skills" class="tab-content">
             <h2>Skills</h2>
             <ul>
                 <li>Python</li>
@@ -46,27 +146,35 @@
                 <li>Docker</li>
                 <li>Delta Lake</li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="tab-content">
-        <div class="container">
+        <section id="projects" class="tab-content">
             <h2>Projects</h2>
             <div class="project">
                 <h3>Project Title</h3>
                 <p>Description of the project...</p>
             </div>
             <!-- Add more project divs as needed -->
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="tab-content">
-        <div class="container">
+        <section id="contact" class="tab-content">
             <h2>Contact</h2>
             <p>Email: aloknathtiwari2000@gmail.com</p>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        const tabs = document.querySelectorAll(".tabs li");
+        const tabContents = document.querySelectorAll(".tab-content");
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("active"));
+            tabContents.forEach((content) => content.classList.remove("active"));
+            tab.classList.add("active");
+            const targetId = tab.getAttribute("data-target");
+            document.getElementById(targetId).classList.add("active");
+          });
+        });
+    </script>
 </body>
 </html>
