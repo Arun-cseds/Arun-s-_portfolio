@@ -20,41 +20,41 @@
         }
 
         /* Header styles */
-        .header {
+        .cover {
             text-align: center;
             padding: 50px 20px; /* Added padding to create space on the right */
             background-color: transparent;
             color: white;
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Align items with space between */
         }
 
-        .profile-pic {
-            margin-right: 20px; /* Add margin to the right of the profile picture */
-            float: right;
+        .profile-info {
+            float: left;
+            margin-left: 20px;
         }
 
-        .profile-pic img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 4px solid #fff;
-            background-color: transparent; /* Remove the background color */
+        .profile-info h1 {
+            margin-bottom: 0;
         }
 
         /* Navigation styles */
         nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             background-color: rgba(52, 152, 219, 0.7); /* Light blue with transparency */
             padding: 10px 20px;
             box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1); /* Shadow for the bottom */
             z-index: 9999; /* Ensure the tabs appear above other content */
-            text-align: center; /* Center the tabs */
         }
 
         .tabs {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            display: inline-block; /* Ensure tabs are in a line */
+            background-color: rgba(128, 0, 128, 0.2); /* Light transparent purple background for tabs */
         }
 
         .tabs li {
@@ -75,12 +75,24 @@
         .tab-content {
             display: none;
             padding: 20px 0;
-            text-align: center; /* Center the content */
+            text-align: center; /* Center-align tab content */
         }
 
         .tab-content.active {
             display: block;
             animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Floating animation */
@@ -94,7 +106,7 @@
         }
 
         .float-text {
-            animation: floatText 10s infinite;
+            animation: floatText 10s infinite; /* Change every 10 seconds */
             color: white;
             text-align: center;
             margin-top: 20px;
@@ -123,12 +135,14 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="cover">
+        <div class="profile-info">
+            <h1>Aloknath Tiwari</h1>
+            <p>Data Engineer</p>
+        </div>
         <div class="profile-pic">
             <img src="Alok.jpg" alt="Alok Nath Tiwari">
         </div>
-        <h1>AlokNath Tiwari</h1>
-        <h2>Data Engineer</h2>
     </header>
 
     <nav>
@@ -146,7 +160,7 @@
         <section id="about" class="tab-content active">
             <h2 class="float-text">About Me</h2>
             <p class="float-text">I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change.</p>
-                        <p class="float-text">My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements.</p>
+            <p class="float-text">My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements.</p>
             <p class="float-text">I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology.</p>
         </section>
 
@@ -206,7 +220,7 @@
         <section id="contact" class="tab-content">
             <h2 class="float-text">Contact</h2>
             <p class="float-text">Email: aloknathtiwari2000@gmail.com</p>
-            <p class="float-text">LinkedIn: <a href="https://linkedin.com/in/aloknathtiwari">linkedin.com/in/aloknathtiwari</a></p>
+            <p class="float-text">LinkedIn: <a href="https://www.linkedin.com/in/aloknathtiwari">linkedin.com/in/aloknathtiwari</a></p>
         </section>
     </div>
 
@@ -257,4 +271,3 @@
 </body>
 
 </html>
-
