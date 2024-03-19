@@ -1,164 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap');
+/* CSS styles for the entire page */
+:root {
+    --font: 'Bricolage Grotesque', sans-serif;
+}
 
-/* General Styles */
+/* Add your existing CSS styles here */
+
 body {
     font-family: var(--font);
-    color: #333;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(115deg, #becf4f, #fad648, #a767e5, #12bcfe, #44ce7b);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Container Styles */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Header Styles */
-.cover {
-    text-align: center;
-    padding: 50px 0;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.profile-pic img {
-    border-radius: 50%;
-    border: 5px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 36px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Navigation Styles */
-nav {
-    margin-bottom: 20px;
-}
-
-.tabs {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    background: url("https://images.unsplash.com/photo-1631595931168-26044c37dbbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.4;
+    font-weight: 300;
 }
 
+.cover {
+    background: url("https://images.unsplash.com/photo-1629708150162-f55bda97e832?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Additional styles for more interactivity and colorfulness */
 .tabs li {
-    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 8px 15px;
     cursor: pointer;
 }
 
 .tabs li.active {
-    background-color: #007bff;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.tabs li a {
     color: #fff;
-    border-radius: 5px 5px 0 0;
+    text-decoration: none;
 }
 
-.tabs li:not(.active):hover {
-    background-color: rgba(0, 123, 255, 0.8);
+.tabs li a:hover {
+    text-decoration: underline;
 }
 
-/* Tab Content Styles */
 .tab-content {
-    display: none;
-    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 10px 10px;
+    padding: 20px;
+    margin-top: -2px;
 }
 
-.tab-content.active {
-    display: block;
-}
-
-/* Skills Styles */
-.skills-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.skills-list li {
-    margin-bottom: 10px;
-}
-
-.skill {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-}
-
-/* Project Styles */
 .project {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
     padding: 10px;
-    margin-bottom: 20px;
-    background: rgba(0, 123, 255, 0.1);
-    border-left: 3px solid #007bff;
-}
-
-.project h3 {
-    margin-top: 0;
-}
-
-/* Contact Styles */
-#contact p {
-    font-size: 24px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 32px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    .tabs li {
-        padding: 10px 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    h1 {
-        font-size: 28px;
-    }
-
-    .tabs li {
-        padding: 8px 12px;
-    }
+    margin-bottom: 10px;
 }
