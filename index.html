@@ -29,13 +29,18 @@
             justify-content: space-between; /* Align items with space between */
         }
 
-        .profile-info {
-            float: left;
-            margin-left: 20px;
+        .profile-pic {
+            margin-right: 20px; /* Add margin to the right of the profile picture */
+            float: right;
         }
 
-        .profile-info h1 {
-            margin-bottom: 0;
+        .profile-pic img {
+            border-radius: 50%;
+            width: 100px; /* Set the width of the profile picture */
+            height: 100px; /* Set the height of the profile picture */
+            object-fit: cover;
+            border: 2px solid #fff; /* Reduce the border thickness */
+            background-color: transparent; /* Remove the background color */
         }
 
         /* Navigation styles */
@@ -54,11 +59,12 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
-            background-color: rgba(128, 0, 128, 0.2); /* Light transparent purple background for tabs */
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Align items in the center */
+            background-color: #8a2be2; /* Purple background color for tabs */
         }
 
         .tabs li {
-            display: inline-block;
             margin-right: 20px;
             cursor: pointer;
             font-size: 1.2em;
@@ -75,7 +81,6 @@
         .tab-content {
             display: none;
             padding: 20px 0;
-            text-align: center; /* Center-align tab content */
         }
 
         .tab-content.active {
@@ -106,7 +111,7 @@
         }
 
         .float-text {
-            animation: floatText 10s infinite; /* Change every 10 seconds */
+            animation: floatText 10s infinite; /* Change floating text every 10 seconds */
             color: white;
             text-align: center;
             margin-top: 20px;
@@ -136,10 +141,8 @@
 
 <body>
     <header class="cover">
-        <div class="profile-info">
-            <h1>Aloknath Tiwari</h1>
-            <p>Data Engineer</p>
-        </div>
+        <h1>AlokNath Tiwari</h1>
+        <h2>Data Engineer</h2>
         <div class="profile-pic">
             <img src="Alok.jpg" alt="Alok Nath Tiwari">
         </div>
@@ -180,92 +183,38 @@
             <h2 class="float-text">Projects</h2>
             <div class="project float-text">
                 <h3>Building Data Pipelines with Apache Airflow</h3>
-                <p>Orchestrated data pipelines for a medical billing desk project.
-                    Extracted data from various sources, transformed it using PySpark, and loaded it into a cloud SQL database.
-                    Managed data processing and storage using Apache Airflow.</p>
-            </div>
-            <div class="project float-text">
-                <h3>Exploring Blockchain for Future Technology</h3>
-                <p>Researching and developing blockchain solutions for future technology applications.
-                    Building prototypes for secure and decentralized record management.</p>
+                <p>Orchestrated data pipelines. Continued from here you can stop.
             </div>
         </section>
 
         <section id="interests" class="tab-content">
             <h2 class="float-text">Interests</h2>
             <ul class="float-text">
-                <li>Data Engineering</li>
-                <li>AI</li>
-                <li>Blockchain Technology</li>
                 <li>Web3.0</li>
+                <li>AI</li>
+                <li>Data Engineering</li>
+                <li>Blockchain Technology</li>
             </ul>
-        </section>
-
-        <section id="education" class="tab-content">
-            <h2 class="float-text">Education</h2>
-            <ul class="float-text">
-                <li>
-                    <strong>Master's in Computer Applications (MCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br>
-                    Present
-                </li>
-                <li>
-                    <strong>Bachelor's in Computer Applications (BCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br>
-                    Graduated
-                </li>
-            </ul>
-        </section>
-
-        <section id="contact" class="tab-content">
-            <h2 class="float-text">Contact</h2>
-            <p class="float-text">Email: aloknathtiwari2000@gmail.com</p>
-            <p class="float-text">LinkedIn: <a href="https://www.linkedin.com/in/aloknathtiwari">linkedin.com/in/aloknathtiwari</a></p>
         </section>
     </div>
 
     <script>
-        // JavaScript code
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabs = document.querySelectorAll(".tabs li");
-            const tabContents = document.querySelectorAll(".tab-content");
-            const floatText = document.querySelectorAll(".float-text");
+        // JavaScript code for tabs functionality
+        const tabs = document.querySelectorAll('.tabs li');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-            const colors = ["#fff", "#f0f8ff", "#f5f5dc", "#f0fff0", "#faebd7", "#f5f5f5", "#fffff0"];
-
-            tabs.forEach((tab, index) => {
-                tab.addEventListener("click", () => {
-                    // Remove active class from all tabs and tab contents
-                    tabs.forEach((t) => t.classList.remove("active"));
-                    tabContents.forEach((content) => content.classList.remove("active"));
-
-                    // Add active class to the clicked tab and corresponding tab content
-                    tab.classList.add("active");
-                    tabContents[index].classList.add("active");
-
-                    // Change color of floating text
-                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                    floatText.forEach((text) => {
-                        text.style.color = randomColor;
-                    });
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => item.classList.remove('active'));
+                tab.classList.add('active');
+                const target = tab.dataset.target;
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === target) {
+                        content.classList.add('active');
+                    }
                 });
             });
-
-            // Automatically switch tabs and change floating text every 10 seconds
-            let activeTab = 0;
-            setInterval(() => {
-                activeTab = (activeTab + 1) % tabs.length;
-                tabs.forEach((t) => t.classList.remove("active"));
-                tabContents.forEach((content) => content.classList.remove("active"));
-                tabs[activeTab].classList.add("active");
-                tabContents[activeTab].classList.add("active");
-
-                // Change color of floating text
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                floatText.forEach((text) => {
-                    text.style.color = randomColor;
-                });
-            }, 10000); // 10000 milliseconds = 10 seconds
         });
     </script>
 </body>
