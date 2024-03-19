@@ -240,11 +240,18 @@
                     // Add active class to the clicked tab and corresponding tab content
                     tab.classList.add("active");
                     tabContents[index].classList.add("active");
+
+                    // Change color of floating text
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    floatText.forEach((text) => {
+                        text.style.color = randomColor;
+                    });
                 });
             });
 
-            // Automatically switch tabs every 5 seconds
+            // Automatically switch tabs and change floating text every minute
             let activeTab = 0;
+            let activeColor = 0;
             setInterval(() => {
                 activeTab = (activeTab + 1) % tabs.length;
                 tabs.forEach((t) => t.classList.remove("active"));
@@ -253,11 +260,14 @@
                 tabContents[activeTab].classList.add("active");
 
                 // Change color of floating text
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                const randomColor = colors[activeColor];
                 floatText.forEach((text) => {
                     text.style.color = randomColor;
                 });
-            }, 5000);
+
+                // Increment color index
+                activeColor = (activeColor + 1) % colors.length;
+            }, 60000); // 60000 milliseconds = 1 minute
         });
     </script>
 </body>
