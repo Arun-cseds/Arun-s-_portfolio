@@ -1,18 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap');
-
 /* Global styles */
-:root {
-    --primary-color: #1a1a1a;
-    --secondary-color: #f1f1f1;
-    --accent-color: #ff7eb6;
-}
-
 body {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
 }
 
 .container {
@@ -25,8 +15,8 @@ body {
 .cover {
     text-align: center;
     padding: 50px 0;
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+    background-color: #3498db;
+    color: #fff;
 }
 
 .profile-pic img {
@@ -34,7 +24,7 @@ body {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border: 4px solid var(--secondary-color);
+    border: 4px solid #fff;
 }
 
 /* Navigation styles */
@@ -53,12 +43,13 @@ nav {
     margin-right: 20px;
     cursor: pointer;
     font-size: 1.2em;
-    color: var(--secondary-color);
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 .tabs li.active {
     font-weight: bold;
-    color: var(--accent-color);
+    color: #3498db;
 }
 
 /* Tab content styles */
@@ -69,6 +60,18 @@ nav {
 
 .tab-content.active {
     display: block;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Skills list styles */
@@ -80,8 +83,8 @@ nav {
 .skills-list li {
     display: inline-block;
     margin-right: 10px;
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+    background-color: #3498db;
+    color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -90,13 +93,39 @@ nav {
 .project {
     margin-bottom: 20px;
     padding: 10px;
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+    background-color: #3498db;
+    color: #fff;
     border-radius: 5px;
 }
 
 /* Contact section styles */
 #contact p {
     font-size: 1.2em;
-    color: var(--accent-color);
+    color: #3498db;
+}
+
+/* Animations */
+@keyframes changeColor {
+    0% { background-color: #ff7eb6; }
+    25% { background-color: #17c3b2; }
+    50% { background-color: #ffd700; }
+    75% { background-color: #40e0d0; }
+    100% { background-color: #ff7eb6; }
+}
+
+@keyframes changeText {
+    0%, 100% { content: "AlokNath Tiwari"; }
+    25% { content: "Data Engineer"; }
+    50% { content: "Web3.0 and AI"; }
+    75% { content: "Passionate Learner"; }
+}
+
+body {
+    animation: changeColor 2s infinite;
+}
+
+h1::after {
+    content: "AlokNath Tiwari";
+    display: inline-block;
+    animation: changeText 5s infinite;
 }
