@@ -1,8 +1,18 @@
 /* Global styles */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #f1f1f1;
+    --accent-color: #ff7eb6;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: background-color 5s;
+    transition-timing-function: ease-in-out;
 }
 
 .container {
@@ -15,8 +25,8 @@ body {
 .cover {
     text-align: center;
     padding: 50px 0;
-    background-color: #3498db;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .profile-pic img {
@@ -24,7 +34,7 @@ body {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border: 4px solid #fff;
+    border: 4px solid var(--secondary-color);
 }
 
 /* Navigation styles */
@@ -43,13 +53,12 @@ nav {
     margin-right: 20px;
     cursor: pointer;
     font-size: 1.2em;
-    color: #fff;
-    transition: all 0.3s ease;
+    color: var(--secondary-color);
 }
 
 .tabs li.active {
     font-weight: bold;
-    color: #3498db;
+    color: var(--accent-color);
 }
 
 /* Tab content styles */
@@ -60,18 +69,6 @@ nav {
 
 .tab-content.active {
     display: block;
-    animation: fadeInUp 1s ease;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Skills list styles */
@@ -83,8 +80,8 @@ nav {
 .skills-list li {
     display: inline-block;
     margin-right: 10px;
-    background-color: #3498db;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -93,49 +90,13 @@ nav {
 .project {
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #3498db;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
     border-radius: 5px;
 }
 
 /* Contact section styles */
 #contact p {
     font-size: 1.2em;
-    color: #3498db;
-}
-
-/* Animations */
-@keyframes changeColor {
-    0%, 100% { background-color: #ff7eb6; }
-    25% { background-color: #17c3b2; }
-    50% { background-color: #ffd700; }
-    75% { background-color: #40e0d0; }
-}
-
-@keyframes changeText {
-    0%, 100% { content: "AlokNath Tiwari"; }
-    25% { content: "Data Engineer"; }
-    50% { content: "Web3.0 and AI"; }
-    75% { content: "Passionate Learner"; }
-}
-
-body {
-    animation: changeColor 8s infinite;
-}
-
-h1 {
-    margin-bottom: 20px; /* Add space between name and content */
-    position: relative; /* Needed for absolute positioning of ::after pseudo-element */
-}
-
-h1::after {
-    content: "AlokNath Tiwari";
-    display: inline-block;
-    animation: changeText 12s infinite; /* Change content every 3 seconds */
-    animation-delay: 3s; /* Delay text animation by 3 seconds */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    text-align: center;
+    color: var(--accent-color);
 }
