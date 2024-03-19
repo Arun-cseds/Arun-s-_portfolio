@@ -141,6 +141,8 @@
             <li data-target="skills"><a href="#">Skills</a></li>
             <li data-target="projects"><a href="#">Projects</a></li>
             <li data-target="contact"><a href="#">Contact</a></li>
+            <li data-target="education"><a href="#">Education</a></li>
+            <li data-target="interests"><a href="#">Interests</a></li>
         </ul>
     </nav>
 
@@ -178,73 +180,72 @@
                     Developed prototypes for secure and decentralized health record management.</p>
             </div>
         </section>
+
+        <section id="contact" class="tab-content">
+            <h2>Contact</h2>
+            <p>Email: aloknathtiwari2000@gmail.com</p>
+        </section>
+
+        <section id="education" class="tab-content">
+            <h2>Education</h2>
+            <ul>
+                <li style="background-color: #17c3b2; color: #fff;">
+                    <strong>Master's in Computer Applications (MCA)</strong><br>
+                    Chhatrapati Shivaji Maharaj University<br>
+                                        <span style="background-color: #17c3b2; color: #fff;">Present</span>
+                </li>
+                <li style="background-color: #ffd700; color: #fff;">
+                    <strong>Bachelor's in Computer Applications (BCA)</strong><br>
+                    Chhatrapati Shivaji Maharaj University<br>
+                    <span style="background-color: #ffd700; color: #fff;">Graduated</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="interests" class="tab-content">
+            <h2>Interests</h2>
+            <ul>
+                <li style="background-color: #3498db; color: #fff;">Web3.0</li>
+                <li style="background-color: #17c3b2; color: #fff;">AI</li>
+                <li style="background-color: #ffd700; color: #fff;">Data Engineering</li>
+                <li style="background-color: #40e0d0; color: #fff;">Blockchain Technology</li>
+            </ul>
+        </section>
+
     </div>
-</body>
 
-</html>
-<section id="contact" class="tab-content">
-    <h2>Contact</h2>
-    <p>Email: aloknathtiwari2000@gmail.com</p>
-</section>
+    <script>
+        // JavaScript code
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tabs li");
+            const tabContents = document.querySelectorAll(".tab-content");
 
-<section id="education" class="tab-content">
-    <h2>Education</h2>
-    <ul>
-        <li style="background-color: #17c3b2; color: #fff;">
-            <strong>Master's in Computer Applications (MCA)</strong><br>
-            Chhatrapati Shivaji Maharaj University<br>
-            <span style="background-color: #17c3b2; color: #fff;">Present</span>
-        </li>
-        <li style="background-color: #ffd700; color: #fff;">
-            <strong>Bachelor's in Computer Applications (BCA)</strong><br>
-            Chhatrapati Shivaji Maharaj University<br>
-            <span style="background-color: #ffd700; color: #fff;">Graduated</span>
-        </li>
-    </ul>
-</section>
+            tabs.forEach((tab, index) => {
+                tab.addEventListener("click", () => {
+                    // Remove active class from all tabs and tab contents
+                    tabs.forEach((t) => t.classList.remove("active"));
+                    tabContents.forEach((content) => content.classList.remove("active"));
 
-<section id="interests" class="tab-content">
-    <h2>Interests</h2>
-    <ul>
-        <li style="background-color: #3498db; color: #fff;">Web3.0</li>
-        <li style="background-color: #17c3b2; color: #fff;">AI</li>
-        <li style="background-color: #ffd700; color: #fff;">Data Engineering</li>
-        <li style="background-color: #40e0d0; color: #fff;">Blockchain Technology</li>
-    </ul>
-</section>
+                    // Add active class to the clicked tab and corresponding tab content
+                    tab.classList.add("active");
+                    tabContents[index].classList.add("active");
+                });
+            });
 
-</div>
-
-<script>
-    // JavaScript code
-    document.addEventListener("DOMContentLoaded", function () {
-        const tabs = document.querySelectorAll(".tabs li");
-        const tabContents = document.querySelectorAll(".tab-content");
-
-        tabs.forEach((tab, index) => {
-            tab.addEventListener("click", () => {
-                // Remove active class from all tabs and tab contents
+            // Automatically switch tabs every 5 seconds
+            let activeTab = 0;
+            setInterval(() => {
+                activeTab = (activeTab + 1) % tabs.length;
                 tabs.forEach((t) => t.classList.remove("active"));
                 tabContents.forEach((content) => content.classList.remove("active"));
-
-                // Add active class to the clicked tab and corresponding tab content
-                tab.classList.add("active");
-                tabContents[index].classList.add("active");
-            });
+                tabs[activeTab].classList.add("active");
+                tabContents[activeTab].classList.add("active");
+            }, 5000);
         });
-
-        // Automatically switch tabs every 5 seconds
-        let activeTab = 0;
-        setInterval(() => {
-            activeTab = (activeTab + 1) % tabs.length;
-            tabs.forEach((t) => t.classList.remove("active"));
-            tabContents.forEach((content) => content.classList.remove("active"));
-            tabs[activeTab].classList.add("active");
-            tabContents[activeTab].classList.add("active");
-        }, 5000);
-    });
-</script>
+    </script>
 
 </body>
 
 </html>
+
+                   
