@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlokNath Tiwari - Portfolio</title>
     <link rel="stylesheet" href="style.css">
@@ -12,7 +11,7 @@
         <div class="profile-pic">
             <img src="./alok.jpg" alt="Alok Nath Tiwari">
         </div>
-        <h1 id="headline">AlokNath Tiwari</h1>
+        <h1>AlokNath Tiwari</h1>
         <p>Data Engineer</p>
     </header>
 
@@ -60,26 +59,6 @@
         </section>
     </div>
 
-    <script>
-        const colors = ['#ff7eb6', '#17c3b2', '#ffd700', '#40e0d0']; // Define array of colors
-        let currentColorIndex = 0;
-
-        function changeBackground() {
-            document.body.style.background = colors[currentColorIndex];
-            currentColorIndex = (currentColorIndex + 1) % colors.length;
-        }
-
-        function changeText() {
-            const texts = ['AlokNath Tiwari', 'Data Engineer', 'Web3.0 and AI'];
-            const headline = document.getElementById('headline');
-            headline.innerText = texts[currentColorIndex];
-        }
-
-        // Change background every 2 seconds
-        setInterval(changeBackground, 2000);
-
-        // Change text content every 5 seconds
-        setInterval(changeText, 5000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
