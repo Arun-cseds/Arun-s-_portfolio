@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlokNath Tiwari - Portfolio</title>
     <style>
-        /* Your custom CSS styles here */
         /* Global styles */
         body {
             font-family: 'Paprika', sans-serif;
@@ -144,7 +143,9 @@
     <div class="container">
         <section id="about" class="tab-content active">
             <h2>About Me</h2>
-            <p>Your about me content here...</p>
+            <p>I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change.</p>
+            <p>My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements.</p>
+            <p>I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology.</p>
         </section>
 
         <section id="skills" class="tab-content">
@@ -170,20 +171,12 @@
 
         <section id="contact" class="tab-content">
             <h2>Contact</h2>
-            <form id="contact-form" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
+            <p>Email: aloknathtiwari2000@gmail.com</p>
         </section>
     </div>
 
     <script>
-        // Your JavaScript code here
+        // JavaScript code
         document.addEventListener("DOMContentLoaded", function() {
             const tabs = document.querySelectorAll(".tabs li");
             const tabContents = document.querySelectorAll(".tab-content");
@@ -202,7 +195,7 @@
 
             // Automatically switch tabs every 5 seconds
             let activeTab = 0;
-            setInterval(() => {
+             setInterval(() => {
                 activeTab = (activeTab + 1) % tabs.length;
                 tabs.forEach((t) => t.classList.remove("active"));
                 tabContents.forEach((content) => content.classList.remove("active"));
