@@ -106,11 +106,10 @@ nav {
 
 /* Animations */
 @keyframes changeColor {
-    0% { background-color: #ff7eb6; }
+    0%, 100% { background-color: #ff7eb6; }
     25% { background-color: #17c3b2; }
     50% { background-color: #ffd700; }
     75% { background-color: #40e0d0; }
-    100% { background-color: #ff7eb6; }
 }
 
 @keyframes changeText {
@@ -121,11 +120,22 @@ nav {
 }
 
 body {
-    animation: changeColor 5s infinite;
+    animation: changeColor 8s infinite;
+}
+
+h1 {
+    margin-bottom: 20px; /* Add space between name and content */
+    position: relative; /* Needed for absolute positioning of ::after pseudo-element */
 }
 
 h1::after {
     content: "AlokNath Tiwari";
     display: inline-block;
-    animation: changeText 5s infinite;
+    animation: changeText 12s infinite; /* Change content every 3 seconds */
+    animation-delay: 3s; /* Delay text animation by 3 seconds */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
