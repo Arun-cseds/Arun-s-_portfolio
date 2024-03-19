@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlokNath Tiwari - Portfolio</title>
     <style>
+        /* Your CSS styles here */
+
         /* Global styles */
         body {
             font-family: 'Paprika', sans-serif;
@@ -106,22 +109,9 @@
             color: #fff;
             border-radius: 5px;
         }
-
-        /* Contact section styles */
-        #contact p {
-            font-size: 1.2em;
-            color: #3498db;
-        }
-
-        /* Animations */
-        @keyframes changeColor {
-            0%, 100% { background-color: #ff7eb6; }
-            25% { background-color: #17c3b2; }
-            50% { background-color: #ffd700; }
-            75% { background-color: #40e0d0; }
-        }
     </style>
 </head>
+
 <body>
     <header class="cover">
         <div class="profile-pic">
@@ -136,6 +126,7 @@
             <li class="active" data-target="about"><a href="#">About Me</a></li>
             <li data-target="skills"><a href="#">Skills</a></li>
             <li data-target="projects"><a href="#">Projects</a></li>
+            <li data-target="interests"><a href="#">Interests</a></li>
             <li data-target="contact"><a href="#">Contact</a></li>
         </ul>
     </nav>
@@ -163,12 +154,31 @@
         <section id="projects" class="tab-content">
             <h2>Projects</h2>
             <div class="project">
-                <h3>Project Title</h3>
-                <p>Description of the project...</p>
+                <h3>Building Data Pipelines with Apache Airflow</h3>
+                <ul>
+                    <li>Orchestrated data pipelines for a medical billing desk project.</li>
+                    <li>Extracted data from various sources, transformed it using PySpark, and loaded it into a cloud SQL database.</li>
+                    <li>Managed data processing and storage using Apache Airflow.</li>
+                </ul>
             </div>
-            <!-- Add more project divs as needed -->
+            <div class="project">
+                <h3>Exploring Blockchain for Healthcare</h3>
+                <ul>
+                    <li>Researched the potential of blockchain technology in healthcare.</li>
+                    <li>Developed prototypes for secure and decentralized health record management.</li>
+                </ul>
+            </div>
         </section>
 
+        <section id="interests" class="tab-content">
+            <h2>Interests</h2>
+            <ul>
+                <li>Web3.0</li>
+                <li>AI</li>
+                <li>Data Engineering</li>
+                <li>Blockchain Technology</li>
+            </ul>
+        </section>
         <section id="contact" class="tab-content">
             <h2>Contact</h2>
             <p>Email: aloknathtiwari2000@gmail.com</p>
@@ -195,7 +205,7 @@
 
             // Automatically switch tabs every 5 seconds
             let activeTab = 0;
-             setInterval(() => {
+            setInterval(() => {
                 activeTab = (activeTab + 1) % tabs.length;
                 tabs.forEach((t) => t.classList.remove("active"));
                 tabContents.forEach((content) => content.classList.remove("active"));
@@ -205,4 +215,5 @@
         });
     </script>
 </body>
+
 </html>
