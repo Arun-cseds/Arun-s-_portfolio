@@ -109,6 +109,20 @@
             color: #fff;
             border-radius: 5px;
         }
+
+        /* Contact section styles */
+        #contact p {
+            font-size: 1.2em;
+            color: #3498db;
+        }
+
+        /* Animations */
+        @keyframes changeColor {
+            0%, 100% { background-color: #ff7eb6; }
+            25% { background-color: #17c3b2; }
+            50% { background-color: #ffd700; }
+            75% { background-color: #40e0d0; }
+        }
     </style>
 </head>
 
@@ -126,7 +140,6 @@
             <li class="active" data-target="about"><a href="#">About Me</a></li>
             <li data-target="skills"><a href="#">Skills</a></li>
             <li data-target="projects"><a href="#">Projects</a></li>
-            <li data-target="interests"><a href="#">Interests</a></li>
             <li data-target="contact"><a href="#">Contact</a></li>
         </ul>
     </nav>
@@ -155,65 +168,83 @@
             <h2>Projects</h2>
             <div class="project">
                 <h3>Building Data Pipelines with Apache Airflow</h3>
-                <ul>
-                    <li>Orchestrated data pipelines for a medical billing desk project.</li>
-                    <li>Extracted data from various sources, transformed it using PySpark, and loaded it into a cloud SQL database.</li>
-                    <li>Managed data processing and storage using Apache Airflow.</li>
-                </ul>
+                <p>Orchestrated data pipelines for a medical billing desk project.
+                    Extracted data from various sources, transformed it using PySpark, and loaded it into a cloud SQL database.
+                    Managed data processing and storage using Apache Airflow.</p>
             </div>
             <div class="project">
                 <h3>Exploring Blockchain for Healthcare</h3>
-                <ul>
-                    <li>Researched the potential of blockchain technology in healthcare.</li>
-                    <li>Developed prototypes for secure and decentralized health record management.</li>
-                </ul>
+                <p>Researched the potential of blockchain technology in healthcare.
+                    Developed prototypes for secure and decentralized health record management.</p>
             </div>
         </section>
-
-        <section id="interests" class="tab-content">
-            <h2>Interests</h2>
-            <ul>
-                <li>Web3.0</li>
-                <li>AI</li>
-                <li>Data Engineering</li>
-                <li>Blockchain Technology</li>
-            </ul>
-        </section>
-        <section id="contact" class="tab-content">
-            <h2>Contact</h2>
-            <p>Email: aloknathtiwari2000@gmail.com</p>
-        </section>
     </div>
+</body>
 
-    <script>
-        // JavaScript code
-        document.addEventListener("DOMContentLoaded", function() {
-            const tabs = document.querySelectorAll(".tabs li");
-            const tabContents = document.querySelectorAll(".tab-content");
+</html>
+<section id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <p>Email: aloknathtiwari2000@gmail.com</p>
+</section>
 
-            tabs.forEach((tab, index) => {
-                tab.addEventListener("click", () => {
-                    // Remove active class from all tabs and tab contents
-                    tabs.forEach((t) => t.classList.remove("active"));
-                    tabContents.forEach((content) => content.classList.remove("active"));
+<section id="education" class="tab-content">
+    <h2>Education</h2>
+    <ul>
+        <li style="background-color: #17c3b2; color: #fff;">
+            <strong>Master's in Computer Applications (MCA)</strong><br>
+            Chhatrapati Shivaji Maharaj University<br>
+            <span style="background-color: #17c3b2; color: #fff;">Present</span>
+        </li>
+        <li style="background-color: #ffd700; color: #fff;">
+            <strong>Bachelor's in Computer Applications (BCA)</strong><br>
+            Chhatrapati Shivaji Maharaj University<br>
+            <span style="background-color: #ffd700; color: #fff;">Graduated</span>
+        </li>
+    </ul>
+</section>
 
-                    // Add active class to the clicked tab and corresponding tab content
-                    tab.classList.add("active");
-                    tabContents[index].classList.add("active");
-                });
-            });
+<section id="interests" class="tab-content">
+    <h2>Interests</h2>
+    <ul>
+        <li style="background-color: #3498db; color: #fff;">Web3.0</li>
+        <li style="background-color: #17c3b2; color: #fff;">AI</li>
+        <li style="background-color: #ffd700; color: #fff;">Data Engineering</li>
+        <li style="background-color: #40e0d0; color: #fff;">Blockchain Technology</li>
+    </ul>
+</section>
 
-            // Automatically switch tabs every 5 seconds
-            let activeTab = 0;
-            setInterval(() => {
-                activeTab = (activeTab + 1) % tabs.length;
+</div>
+
+<script>
+    // JavaScript code
+    document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".tabs li");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener("click", () => {
+                // Remove active class from all tabs and tab contents
                 tabs.forEach((t) => t.classList.remove("active"));
                 tabContents.forEach((content) => content.classList.remove("active"));
-                tabs[activeTab].classList.add("active");
-                tabContents[activeTab].classList.add("active");
-            }, 5000);
+
+                // Add active class to the clicked tab and corresponding tab content
+                tab.classList.add("active");
+                tabContents[index].classList.add("active");
+            });
         });
-    </script>
+
+        // Automatically switch tabs every 5 seconds
+        let activeTab = 0;
+        setInterval(() => {
+            activeTab = (activeTab + 1) % tabs.length;
+            tabs.forEach((t) => t.classList.remove("active"));
+            tabContents.forEach((content) => content.classList.remove("active"));
+            tabs[activeTab].classList.add("active");
+            tabContents[activeTab].classList.add("active");
+        }, 5000);
+    });
+</script>
+
 </body>
 
 </html>
