@@ -1,63 +1,102 @@
-/* CSS styles for the entire page */
-:root {
-    --font: 'Bricolage Grotesque', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap');
 
-/* Add your existing CSS styles here */
+/* Global styles */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #f1f1f1;
+    --accent-color: #ff7eb6;
+}
 
 body {
-    font-family: var(--font);
-    background: url("https://images.unsplash.com/photo-1631595931168-26044c37dbbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    line-height: 1.4;
-    font-weight: 300;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
-.cover {
-    background: url("https://images.unsplash.com/photo-1629708150162-f55bda97e832?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
 }
 
-/* Additional styles for more interactivity and colorfulness */
+/* Header styles */
+.cover {
+    text-align: center;
+    padding: 50px 0;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.profile-pic img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+}
+
+/* Navigation styles */
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    list-style-type: none;
+    padding: 0;
+}
+
 .tabs li {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    margin-right: 10px;
-    padding: 8px 15px;
+    display: inline-block;
+    margin-right: 20px;
     cursor: pointer;
+    font-size: 1.2em;
+    color: var(--secondary-color);
 }
 
 .tabs li.active {
-    background-color: rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    color: var(--accent-color);
 }
 
-.tabs li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.tabs li a:hover {
-    text-decoration: underline;
-}
-
+/* Tab content styles */
 .tab-content {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 0 0 10px 10px;
-    padding: 20px;
-    margin-top: -2px;
+    display: none;
+    padding: 20px 0;
 }
 
-.project {
-    background-color: rgba(255, 255, 255, 0.3);
+.tab-content.active {
+    display: block;
+}
+
+/* Skills list styles */
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-list li {
+    display: inline-block;
+    margin-right: 10px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
     border-radius: 5px;
+}
+
+/* Project styles */
+.project {
+    margin-bottom: 20px;
     padding: 10px;
-    margin-bottom: 10px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+/* Contact section styles */
+#contact p {
+    font-size: 1.2em;
+    color: var(--accent-color);
 }
