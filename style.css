@@ -121,7 +121,7 @@ nav {
 }
 
 body {
-    animation: changeColor 2s infinite;
+    animation: changeColor 5s infinite;
 }
 
 h1::after {
