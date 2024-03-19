@@ -27,11 +27,12 @@
             color: white;
             display: flex; /* Use flexbox for alignment */
             justify-content: space-between; /* Align items with space between */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
         }
 
         .profile-pic {
-            margin-right: 20px; /* Add margin to the right of the profile picture */
-            float: right;
+            margin-top: 20px; /* Add margin to the top of the profile picture */
         }
 
         .profile-pic img {
@@ -45,11 +46,8 @@
 
         /* Navigation styles */
         nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
             width: 100%;
-            background-color: rgba(52, 152, 219, 0.7); /* Light blue with transparency */
+            background-color: transparent; /* Remove the background color */
             padding: 10px 20px;
             box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1); /* Shadow for the bottom */
             z-index: 9999; /* Ensure the tabs appear above other content */
@@ -59,16 +57,16 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            justify-content: center;
         }
 
         .tabs li {
-            display: inline-block;
             margin-right: 20px;
             cursor: pointer;
             font-size: 1.2em;
             color: #fff;
             transition: all 0.3s ease;
-            float: left;
         }
 
         .tabs li.active {
@@ -110,39 +108,20 @@
         }
 
         .float-text {
-            animation: floatText 30s infinite;
+            animation: floatText 10s infinite;
             color: white;
             text-align: center;
             margin-top: 20px;
             line-height: 1.5;
-        }
-
-        /* Animations */
-        @keyframes changeColor {
-            0%, 100% {
-                background-color: #ff7eb6;
-            }
-
-            25% {
-                background-color: #17c3b2;
-            }
-
-            50% {
-                background-color: #ffd700;
-            }
-
-            75% {
-                background-color: #40e0d0;
-            }
         }
     </style>
 </head>
 
 <body>
     <header class="cover">
-        <h1>Aloknath Tiwari<br>Data Engineer</h1>
+        <h1>AlokNath Tiwari - Data Engineer</h1>
         <div class="profile-pic">
-            <img src="alok.jpg" alt="Alok Nath Tiwari">
+            <img src="Alok.jpg" alt="Alok Nath Tiwari">
         </div>
     </header>
 
@@ -180,47 +159,35 @@
         <section id="projects" class="tab-content">
             <h2 class="float-text">Projects</h2>
             <div class="project float-text">
-                <h3>Building Data Pipelines with Apache Airflow</h3>
-                <p>Orchestrated data pipelines for a medical billing desk project.
-                    Extracted data from various sources, transformed it using PySpark, and loaded it into a cloud SQL database.
-                    Managed data processing and storage using Apache Airflow.</p>
+                <h3>Project Title</h3>
+                <p>Description of the project goes here.</p>
             </div>
             <div class="project float-text">
-                <h3>Exploring Blockchain for Future Technology</h3>
-                <p>Researching and developing blockchain solutions for future technology applications.
-                    Building prototypes for secure and decentralized record management.</p>
+                <h3>Another Project Title</h3>
+                <p>Description of another project goes here.</p>
             </div>
         </section>
 
         <section id="interests" class="tab-content">
             <h2 class="float-text">Interests</h2>
             <ul class="float-text">
-                <li>Web3.0</li>
-                <li>AI</li>
                 <li>Data Engineering</li>
+                <li>AI</li>
                 <li>Blockchain Technology</li>
+                <li>Web3.0</li>
             </ul>
         </section>
 
         <section id="education" class="tab-content">
             <h2 class="float-text">Education</h2>
-            <ul class="float-text">
-                <li>
-                    <strong>Master's in Computer Applications (MCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br><br>
-                    Present
-                </li>
-                <li>
-                    <strong>Bachelor's in Computer Applications (BCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br><br>
-                    Graduated
-                </li>
-            </ul>
+            <p class="float-text">Bachelor's in Computer Applications (BCA)</p>
+            <p class="float-text">Currently pursuing Master's in Computer Applications (MCA)</p>
         </section>
 
         <section id="contact" class="tab-content">
             <h2 class="float-text">Contact</h2>
             <p class="float-text">Email: aloknathtiwari2000@gmail.com</p>
+            <p class="float-text">LinkedIn: <a href="https://www.linkedin.com/in/aloknathtiwari">linkedin.com/in/aloknathtiwari</a></p>
         </section>
     </div>
 
@@ -229,43 +196,16 @@
         document.addEventListener("DOMContentLoaded", function () {
             const tabs = document.querySelectorAll(".tabs li");
             const tabContents = document.querySelectorAll(".tab-content");
-            const floatText = document.querySelectorAll(".float-text");
-
-            const colors = ["#fff", "#f0f8ff", "#f5f5dc", "#f0fff0", "#faebd7", "#f5f5f5", "#fffff0"];
 
             tabs.forEach((tab, index) => {
                 tab.addEventListener("click", () => {
-                    // Remove active class from all tabs and tab contents
                     tabs.forEach((t) => t.classList.remove("active"));
                     tabContents.forEach((content) => content.classList.remove("active"));
 
-                    // Add active class to the clicked tab and corresponding tab content
                     tab.classList.add("active");
                     tabContents[index].classList.add("active");
-
-                    // Change color of floating text
-                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                    floatText.forEach((text) => {
-                        text.style.color = randomColor;
-                    });
                 });
             });
-
-            // Automatically switch tabs and change floating text every 30 seconds
-            let activeTab = 0;
-            setInterval(() => {
-                activeTab = (activeTab + 1) % tabs.length;
-                tabs.forEach((t) => t.classList.remove("active"));
-                tabContents.forEach((content) => content.classList.remove("active"));
-                tabs[activeTab].classList.add("active");
-                tabContents[activeTab].classList.add("active");
-
-                // Change color of floating text
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                floatText.forEach((text) => {
-                    text.style.color = randomColor;
-                });
-            }, 30000); // 30000 milliseconds = 30 seconds
         });
     </script>
 </body>
