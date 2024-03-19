@@ -184,9 +184,7 @@
                     Managed data processing and storage using Apache Airflow.</p>
             </div>
             <div class="project float-text">
-                <h3>Exploring Blockchain for Healthcare</h3>
-                <p>Researched the potential of blockchain technology in healthcare.
-                    Developed prototypes for secure and decentralized health record management.</p>
+                <h3>Explore Blockchain Technology for Future</h3>
             </div>
         </section>
 
@@ -230,13 +228,6 @@
             const floatText = document.querySelectorAll(".float-text");
 
             const colors = ["#fff", "#f0f8ff", "#f5f5dc", "#f0fff0", "#faebd7", "#f5f5f5", "#fffff0"];
-            const floatInfo = [
-                "This is floating info 1",
-                "This is floating info 2",
-                "This is floating info 3",
-                "This is floating info 4",
-                "This is floating info 5"
-            ];
 
             tabs.forEach((tab, index) => {
                 tab.addEventListener("click", () => {
@@ -258,7 +249,6 @@
 
             // Automatically switch tabs and change floating text every 30 seconds
             let activeTab = 0;
-            let activeColor = 0;
             setInterval(() => {
                 activeTab = (activeTab + 1) % tabs.length;
                 tabs.forEach((t) => t.classList.remove("active"));
@@ -271,15 +261,6 @@
                 floatText.forEach((text) => {
                     text.style.color = randomColor;
                 });
-
-                // Change floating information
-                const randomInfo = floatInfo[Math.floor(Math.random() * floatInfo.length)];
-                floatText.forEach((text) => {
-                    text.innerText = randomInfo;
-                });
-
-                // Increment color index
-                activeColor = (activeColor + 1) % colors.length;
             }, 30000); // 30000 milliseconds = 30 seconds
         });
     </script>
