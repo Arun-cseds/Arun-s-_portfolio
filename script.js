@@ -24,4 +24,3 @@ document.addEventListener("DOMContentLoaded", function() {
         tabContents[activeTab].classList.add("active");
     }, 5000);
 });
-
