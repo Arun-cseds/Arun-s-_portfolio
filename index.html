@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlokNath Tiwari - Portfolio</title>
     <style>
-        /* Your CSS styles here */
-
-        /* Global styles */
+       
+         /* Global styles */
         body {
             font-family: 'Paprika', sans-serif;
             margin: 0;
@@ -19,20 +18,20 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+             color: silver; /* Set text color to silver */
         }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
         /* Header styles */
         .cover {
             text-align: center;
-            padding: 50px 0;
-            background-color: rgba(52, 152, 219, 0.8);
+            padding: 50px 20px; /* Added padding to create space on the right */
+            background-color: #3498db;
             color: #fff;
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Align items with space between */
+        }
+
+        .profile-pic {
+            margin-right: 20px; /* Add margin to the right of the profile picture */
         }
 
         .profile-pic img {
@@ -41,6 +40,7 @@
             height: 150px;
             object-fit: cover;
             border: 4px solid #fff;
+            background-color: transparent; /* Remove the background color */
         }
 
         /* Navigation styles */
@@ -84,6 +84,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -120,12 +121,33 @@
             color: #3498db;
         }
 
+        /* Interests section styles */
+        #interests ul {
+            padding-left: 0; /* Remove default padding */
+        }
+
+        #interests li {
+            color: silver; /* Set text color to silver */
+            font-weight: bold; /* Make text bold */
+        }
+
         /* Animations */
         @keyframes changeColor {
-            0%, 100% { background-color: #ff7eb6; }
-            25% { background-color: #17c3b2; }
-            50% { background-color: #ffd700; }
-            75% { background-color: #40e0d0; }
+            0%, 100% {
+                background-color: #ff7eb6;
+            }
+
+            25% {
+                background-color: #17c3b2;
+            }
+
+            50% {
+                background-color: #ffd700;
+            }
+
+            75% {
+                background-color: #40e0d0;
+            }
         }
     </style>
 </head>
@@ -133,7 +155,7 @@
 <body>
     <header class="cover">
         <div class="profile-pic">
-            <img src="alok.jpg" alt="Alok Nath Tiwari">
+            <img src="advance.jpg" alt="Alok Nath Tiwari">
         </div>
         <h1>AlokNath Tiwari</h1>
         <p>Data Engineer</p>
@@ -153,7 +175,7 @@
     <div class="container">
         <section id="about" class="tab-content active">
             <h2>About Me</h2>
-            <p>I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change.</p>
+                        <p>I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change.</p>
             <p>My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements.</p>
             <p>I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology.</p>
         </section>
@@ -194,53 +216,58 @@
                 <li>Blockchain Technology</li>
             </ul>
         </section>
+
         <section id="education" class="tab-content">
-    <h2>Education</h2>
-    <ul>
-        <li>
-            <strong>Master's in Computer Applications (MCA)</strong><br>
-            Chhatrapati Shivaji Maharaj University<br>
-            <span>Present</span>
-        </li>
-        <li>
-            <strong>Bachelor's in Computer Applications (BCA)</strong><br>
-            Chhatrapati Shivaji Maharaj University<br>
-            <span>Graduated</span>
-        </li>
-    </ul>
-</section>
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>Master's in Computer Applications (MCA)</strong><br>
+                    Chhatrapati Shivaji Maharaj University<br>
+                    Present
+                </li>
+                <li>
+                    <strong>Bachelor's in Computer Applications (BCA)</strong><br>
+                    Chhatrapati Shivaji Maharaj University<br>
+                    Graduated
+                </li>
+            </ul>
+        </section>
 
-<section id="contact" class="tab-content">
-    <h2>Contact</h2>
-    <p>Email: aloknathtiwari2000@gmail.com</p>
-</section>
+        <section id="contact" class="tab-content">
+            <h2>Contact</h2>
+            <p>Email: aloknathtiwari2000@gmail.com</p>
+        </section>
+    </div>
 
-<script>
-    // JavaScript code
-    document.addEventListener("DOMContentLoaded", function () {
-        const tabs = document.querySelectorAll(".tabs li");
-        const tabContents = document.querySelectorAll(".tab-content");
+    <script>
+        // JavaScript code
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tabs li");
+            const tabContents = document.querySelectorAll(".tab-content");
 
-        tabs.forEach((tab, index) => {
-            tab.addEventListener("click", () => {
+            tabs.forEach((tab, index) => {
+                tab.addEventListener("click", () => {
+                    // Remove active class from all tabs and tab contents
+                    tabs.forEach((t) => t.classList.remove("active"));
+                    tabContents.forEach((content) => content.classList.remove("active"));
+
+                    // Add active class to the clicked tab and corresponding tab content
+                    tab.classList.add("active");
+                    tabContents[index].classList.add("active");
+                });
+            });
+
+            // Automatically switch tabs every 5 seconds
+            let activeTab = 0;
+            setInterval(() => {
+                activeTab = (activeTab + 1) % tabs.length;
                 tabs.forEach((t) => t.classList.remove("active"));
                 tabContents.forEach((content) => content.classList.remove("active"));
-                tab.classList.add("active");
-                tabContents[index].classList.add("active");
-            });
+                tabs[activeTab].classList.add("active");
+                tabContents[activeTab].classList.add("active");
+            }, 5000);
         });
-
-        let activeTab = 0;
-        setInterval(() => {
-            activeTab = (activeTab + 1) % tabs.length;
-            tabs.forEach((t) => t.classList.remove("active"));
-            tabContents.forEach((content) => content.classList.remove("active"));
-            tabs[activeTab].classList.add("active");
-            tabContents[activeTab].classList.add("active");
-        }, 5000);
-    });
-</script>
-
+    </script>
 </body>
 
 </html>
