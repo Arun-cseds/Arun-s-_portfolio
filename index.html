@@ -111,7 +111,7 @@
         }
 
         .float-text {
-            animation: floatText 5s infinite;
+            animation: floatText 30s infinite;
             color: white;
         }
 
@@ -229,7 +229,14 @@
             const tabContents = document.querySelectorAll(".tab-content");
             const floatText = document.querySelectorAll(".float-text");
 
-            const colors = ["white", "black", "pink", "green", "blue", "purple", "orange"];
+            const colors = ["#fff", "#f0f8ff", "#f5f5dc", "#f0fff0", "#faebd7", "#f5f5f5", "#fffff0"];
+            const floatInfo = [
+                "This is floating info 1",
+                "This is floating info 2",
+                "This is floating info 3",
+                "This is floating info 4",
+                "This is floating info 5"
+            ];
 
             tabs.forEach((tab, index) => {
                 tab.addEventListener("click", () => {
@@ -249,7 +256,7 @@
                 });
             });
 
-            // Automatically switch tabs and change floating text every minute
+            // Automatically switch tabs and change floating text every 30 seconds
             let activeTab = 0;
             let activeColor = 0;
             setInterval(() => {
@@ -260,14 +267,20 @@
                 tabContents[activeTab].classList.add("active");
 
                 // Change color of floating text
-                const randomColor = colors[activeColor];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
                 floatText.forEach((text) => {
                     text.style.color = randomColor;
                 });
 
+                // Change floating information
+                const randomInfo = floatInfo[Math.floor(Math.random() * floatInfo.length)];
+                floatText.forEach((text) => {
+                    text.innerText = randomInfo;
+                });
+
                 // Increment color index
                 activeColor = (activeColor + 1) % colors.length;
-            }, 60000); // 60000 milliseconds = 1 minute
+            }, 30000); // 30000 milliseconds = 30 seconds
         });
     </script>
 </body>
