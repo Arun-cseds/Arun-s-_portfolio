@@ -112,7 +112,7 @@
 
         .float-text {
             animation: floatText 5s infinite;
-            color: white; /* Set initial color */
+            color: white;
         }
 
         /* Animations */
@@ -138,8 +138,7 @@
 
 <body>
     <header class="cover">
-        <h1>AlokNath Tiwari</h1>
-        <p>Data Engineer</p>
+        <h1>AlokNath Tiwari - Data Engineer</h1>
         <div class="profile-pic">
             <img src="alok.jpg" alt="Alok Nath Tiwari">
         </div>
@@ -228,6 +227,9 @@
         document.addEventListener("DOMContentLoaded", function () {
             const tabs = document.querySelectorAll(".tabs li");
             const tabContents = document.querySelectorAll(".tab-content");
+            const floatText = document.querySelectorAll(".float-text");
+
+            const colors = ["white", "black", "pink", "green", "blue", "purple", "orange"];
 
             tabs.forEach((tab, index) => {
                 tab.addEventListener("click", () => {
@@ -249,6 +251,12 @@
                 tabContents.forEach((content) => content.classList.remove("active"));
                 tabs[activeTab].classList.add("active");
                 tabContents[activeTab].classList.add("active");
+
+                // Change color of floating text
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                floatText.forEach((text) => {
+                    text.style.color = randomColor;
+                });
             }, 5000);
         });
     </script>
