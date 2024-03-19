@@ -46,13 +46,20 @@
 
         /* Navigation styles */
         nav {
-            text-align: center;
-            margin-bottom: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(52, 152, 219, 0.7); /* Light blue with transparency */
+            padding: 10px 20px;
+            box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1); /* Shadow for the bottom */
+            z-index: 9999; /* Ensure the tabs appear above other content */
         }
 
         .tabs {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         .tabs li {
@@ -93,44 +100,18 @@
             }
         }
 
-        /* Skills list styles */
-        .skills-list {
-            list-style-type: none;
-            padding: 0;
+        /* Floating animation */
+        @keyframes floatText {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-50px);
+            }
         }
 
-        .skills-list li {
-            display: inline-block;
-            margin-right: 10px;
-            background-color: #3498db;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        /* Project styles */
-        .project {
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #3498db;
-            color: #fff;
-            border-radius: 5px;
-        }
-
-        /* Contact section styles */
-        #contact p {
-            font-size: 1.2em;
-            color: #3498db;
-        }
-
-        /* Interests section styles */
-        #interests ul {
-            padding-left: 0; /* Remove default padding */
-        }
-
-        #interests li {
-            color: silver; /* Set text color to silver */
-            font-weight: bold; /* Make text bold */
+        .float-text {
+            animation: floatText 5s infinite;
         }
 
         /* Animations */
@@ -150,20 +131,6 @@
             75% {
                 background-color: #40e0d0;
             }
-        }
-
-        /* Floating animation */
-        @keyframes floatText {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(-50px);
-            }
-        }
-
-        .float-text {
-            animation: floatText 5s infinite;
         }
     </style>
 </head>
