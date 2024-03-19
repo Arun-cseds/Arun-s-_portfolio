@@ -15,6 +15,10 @@
             margin: 0;
             padding: 0;
             animation: changeColor 8s infinite;
+            background-image: url('advance.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         .container {
@@ -27,7 +31,7 @@
         .cover {
             text-align: center;
             padding: 50px 0;
-            background-color: #3498db;
+            background-color: rgba(52, 152, 219, 0.8);
             color: #fff;
         }
 
@@ -190,58 +194,52 @@
                 <li>Blockchain Technology</li>
             </ul>
         </section>
-
         <section id="education" class="tab-content">
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <strong>Master's in Computer Applications (MCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br>
-                    <span>Present</span>
-                </li>
-                <li>
-                    <strong>Bachelor's in Computer Applications (BCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br>
-                    <span>Graduated</span>
-                </li>
-            </ul>
-        </section>
+    <h2>Education</h2>
+    <ul>
+        <li>
+            <strong>Master's in Computer Applications (MCA)</strong><br>
+            Chhatrapati Shivaji Maharaj University<br>
+            <span>Present</span>
+        </li>
+        <li>
+            <strong>Bachelor's in Computer Applications (BCA)</strong><br>
+            Chhatrapati Shivaji Maharaj University<br>
+            <span>Graduated</span>
+        </li>
+    </ul>
+</section>
 
-        <section id="contact" class="tab-content">
-            <h2>Contact</h2>
-            <p>Email: aloknathtiwari2000@gmail.com</p>
-        </section>
-    </div>
+<section id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <p>Email: aloknathtiwari2000@gmail.com</p>
+</section>
 
-    <script>
-        // JavaScript code
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabs = document.querySelectorAll(".tabs li");
-            const tabContents = document.querySelectorAll(".tab-content");
+<script>
+    // JavaScript code
+    document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".tabs li");
+        const tabContents = document.querySelectorAll(".tab-content");
 
-            tabs.forEach((tab, index) => {
-                tab.addEventListener("click", () => {
-                    // Remove active class from all tabs and tab contents
-                    tabs.forEach((t) => t.classList.remove("active"));
-                    tabContents.forEach((content) => content.classList.remove("active"));
-
-                    // Add active class to the clicked tab and corresponding tab content
-                    tab.classList.add("active");
-                    tabContents[index].classList.add("active");
-                });
-            });
-
-            // Automatically switch tabs every 5 seconds
-            let activeTab = 0;
-            setInterval(() => {
-                activeTab = (activeTab + 1) % tabs.length;
+        tabs.forEach((tab, index) => {
+            tab.addEventListener("click", () => {
                 tabs.forEach((t) => t.classList.remove("active"));
                 tabContents.forEach((content) => content.classList.remove("active"));
-                tabs[activeTab].classList.add("active");
-                tabContents[activeTab].classList.add("active");
-            }, 5000);
+                tab.classList.add("active");
+                tabContents[index].classList.add("active");
+            });
         });
-    </script>
+
+        let activeTab = 0;
+        setInterval(() => {
+            activeTab = (activeTab + 1) % tabs.length;
+            tabs.forEach((t) => t.classList.remove("active"));
+            tabContents.forEach((content) => content.classList.remove("active"));
+            tabs[activeTab].classList.add("active");
+            tabContents[activeTab].classList.add("active");
+        }, 5000);
+    });
+</script>
 
 </body>
 
