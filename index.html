@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlokNath Tiwari - Data Engineer</title>
+    <title>AlokNath Tiwari - Portfolio</title>
     <style>
         /* Global styles */
         body {
@@ -36,7 +36,7 @@
 
         .profile-pic img {
             border-radius: 50%;
-            width: 200px; /* Larger profile picture */
+            width: 200px;
             height: 200px;
             object-fit: cover;
             border: 4px solid #fff;
@@ -59,12 +59,11 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: center; /* Center align the tabs */
-            background-color: #3498db; /* Light blue background for tabs */
+            text-align: center; /* Align tabs to the center */
         }
 
         .tabs li {
+            display: inline-block;
             margin-right: 20px;
             cursor: pointer;
             font-size: 1.2em;
@@ -75,16 +74,14 @@
         .tabs li.active {
             font-weight: bold;
             color: #3498db;
-            background-color: #fff; /* White background for active tab */
-            border-radius: 5px; /* Optional: Add border radius */
-            padding: 5px 10px; /* Optional: Add padding */
         }
 
         /* Tab content styles */
         .tab-content {
             display: none;
             padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.7); /* Light transparent white background for tab content */
+            text-align: center; /* Align tab content to the center */
+            background-color: rgba(128, 0, 128, 0.3); /* Light transparent purple background */
         }
 
         .tab-content.active {
@@ -108,16 +105,32 @@
             text-align: center;
             margin-top: 20px;
             line-height: 1.5;
-            background-color: #3498db; /* Light blue background */
-            padding: 10px; /* Optional: Add padding for better readability */
-            border-radius: 5px; /* Optional: Add border radius */
+        }
+
+        /* Animations */
+        @keyframes changeColor {
+            0%, 100% {
+                background-color: #ff7eb6;
+            }
+
+            25% {
+                background-color: #17c3b2;
+            }
+
+            50% {
+                background-color: #ffd700;
+            }
+
+            75% {
+                background-color: #40e0d0;
+            }
         }
     </style>
 </head>
 
 <body>
     <header class="cover">
-        <h1>AlokNath Tiwari - Data Engineer</h1>
+        <h1>AlokNath Tiwari</h1>
         <div class="profile-pic">
             <img src="alok.jpg" alt="Alok Nath Tiwari">
         </div>
@@ -164,7 +177,7 @@
             </div>
             <div class="project float-text">
                 <h3>Exploring Blockchain for Future Technology</h3>
-                <p>Researching and developing blockchain solutions for future technology applications.
+                                <p>Researching and developing blockchain solutions for future technology applications.
                     Building prototypes for secure and decentralized record management.</p>
             </div>
         </section>
@@ -249,3 +262,4 @@
 
 </html>
 
+            
