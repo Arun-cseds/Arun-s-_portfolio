@@ -1,265 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlokNath Tiwari - Portfolio</title>
+    <title>AlokNath Tiwari - Data Engineer</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Global styles */
         body {
-            font-family: 'Paprika', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: silver; /* Set text color to silver */
-            background-image: url('advance.jpg'); /* Set the background image */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-color: #f8f8f8;
         }
-
-        /* Header styles */
-        .cover {
-            text-align: center;
-            padding: 50px 20px; /* Added padding to create space on the right */
-            background-color: transparent;
+        header {
+            background-color: #333;
             color: white;
-            display: flex; /* Use flexbox for alignment */
-            justify-content: space-between; /* Align items with space between */
-        }
-
-        .profile-pic {
-            margin-right: 20px; /* Add margin to the right of the profile picture */
-            float: right;
-        }
-
-        .profile-pic img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border: 4px solid #fff;
-            background-color: transparent; /* Remove the background color */
-        }
-
-        /* Navigation styles */
-        nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(52, 152, 219, 0.7); /* Light blue with transparency */
             padding: 10px 20px;
-            box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1); /* Shadow for the bottom */
-            z-index: 9999; /* Ensure the tabs appear above other content */
+            text-align: center;
         }
-
-        .tabs {
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            text-align: center; /* Align tabs to the center */
+            background-color: #333;
+            text-align: center;
         }
-
-        .tabs li {
+        nav ul li {
             display: inline-block;
             margin-right: 20px;
-            cursor: pointer;
-            font-size: 1.2em;
-            color: #fff;
-            transition: all 0.3s ease;
         }
-
-        .tabs li.active {
-            font-weight: bold;
-            color: #3498db;
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
         }
-
-        /* Tab content styles */
-        .tab-content {
-            display: none;
-            padding: 20px 0;
-            text-align: center; /* Align tab content to the center */
-            background-color: rgba(128, 0, 128, 0.3); /* Light transparent purple background */
+        nav ul li a:hover {
+            background-color: #555;
         }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeInUp 1s ease;
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        /* Floating animation */
-        @keyframes floatText {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(-50px);
-            }
-        }
-
-        .float-text {
-            animation: floatText 10s infinite;
+        footer {
+            background-color: #333;
             color: white;
             text-align: center;
-            margin-top: 20px;
-            line-height: 1.5;
-        }
-
-        /* Animations */
-        @keyframes changeColor {
-            0%, 100% {
-                background-color: #ff7eb6;
-            }
-
-            25% {
-                background-color: #17c3b2;
-            }
-
-            50% {
-                background-color: #ffd700;
-            }
-
-            75% {
-                background-color: #40e0d0;
-            }
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
-
 <body>
-    <header class="cover">
-        <h1>AlokNath Tiwari</h1>
-        <div class="profile-pic">
-            <img src="alok.jpg" alt="Alok Nath Tiwari">
-        </div>
+    <header>
+        <h1>AlokNath Tiwari - Data Engineer</h1>
+        <img src="profile.jpg" alt="Profile Picture">
     </header>
-
+    
     <nav>
-        <ul class="tabs">
-            <li class="active" data-target="about"><a href="#">About Me</a></li>
-            <li data-target="skills"><a href="#">Skills</a></li>
-            <li data-target="projects"><a href="#">Projects</a></li>
-            <li data-target="interests"><a href="#">Interests</a></li>
-            <li data-target="education"><a href="#">Education</a></li>
-            <li data-target="contact"><a href="#">Contact</a></li>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <div class="container">
-        <section id="about" class="tab-content active">
-            <h2 class="float-text">About Me</h2>
-            <p class="float-text">I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change.</p>
-            <p class="float-text">My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements.</p>
-            <p class="float-text">I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology.</p>
-        </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm AlokNath Tiwari, a data engineer passionate about leveraging data for impactful insights. I specialize in Python, SQL, Apache Airflow, and Apache Spark.</p>
+    </section>
 
-        <section id="skills" class="tab-content">
-            <h2 class="float-text">Skills</h2>
-            <ul class="skills-list float-text">
-                <li><span class="skill">Python</span></li>
-                <li><span class="skill">SQL</span></li>
-                <li><span class="skill">Docker</span></li>
-                <li><span class="skill">Apache Airflow</span></li>
-                <li><span class="skill">Apache Spark</span></li>
-                <li><span class="skill">Delta Lake</span></li>
-            </ul>
-        </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Apache Airflow</li>
+            <li>Apache Spark</li>
+        </ul>
+    </section>
 
-        <section id="projects" class="tab-content">
-            <h2 class="float-text">Projects</h2>
-            <div class="project float-text">
-                <h3>Building Data Pipelines with Apache Airflow</h3>
-                <p>Orchestrated data pipelines for a medical billing desk project.
-                    Extracted data from various sources, transformed it using PySpark, and loaded it into a cloud SQL database.
-                    Managed data processing and storage using Apache Airflow.</p>
-            </div>
-            <div class="project float-text">
-                <h3>Exploring Blockchain for Future Technology</h3>
-                                <p>Researching and developing blockchain solutions for future technology applications.
-                    Building prototypes for secure and decentralized record management.</p>
-            </div>
-        </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of Project 1.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Description of Project 2.</p>
+        </div>
+    </section>
 
-        <section id="interests" class="tab-content">
-            <h2 class="float-text">Interests</h2>
-            <ul class="float-text">
-                <li>Data Engineering</li>
-                <li>AI</li>
-                <li>Blockchain Technology</li>
-                <li>Web3.0</li>
-            </ul>
-        </section>
+    <section id="education">
+        <h2>Education</h2>
+        <p>Master's in Computer Applications (MCA) - Chhatrapati Shivaji Maharaj University</p>
+        <p>Bachelor's in Computer Applications (BCA) - Chhatrapati Shivaji Maharaj University</p>
+    </section>
 
-        <section id="education" class="tab-content">
-            <h2 class="float-text">Education</h2>
-            <ul class="float-text">
-                <li>
-                    <strong>Master's in Computer Applications (MCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br>
-                    Present
-                </li>
-                <li>
-                    <strong>Bachelor's in Computer Applications (BCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br>
-                    Graduated
-                </li>
-            </ul>
-        </section>
-
-        <section id="contact" class="tab-content">
-            <h2 class="float-text">Contact</h2>
-            <p class="float-text">Email: aloknathtiwari2000@gmail.com</p>
-        </section>
-    </div>
-
-    <script>
-        // JavaScript code
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabs = document.querySelectorAll(".tabs li");
-            const tabContents = document.querySelectorAll(".tab-content");
-            const floatText = document.querySelectorAll(".float-text");
-
-            const colors = ["#fff", "#f0f8ff", "#f5f5dc", "#f0fff0", "#faebd7", "#f5f5f5", "#fffff0"];
-
-            tabs.forEach((tab, index) => {
-                tab.addEventListener("click", () => {
-                    // Remove active class from all tabs and tab contents
-                    tabs.forEach((t) => t.classList.remove("active"));
-                    tabContents.forEach((content) => content.classList.remove("active"));
-
-                    // Add active class to the clicked tab and corresponding tab content
-                    tab.classList.add("active");
-                    tabContents[index].classList.add("active");
-
-                    // Change color of floating text
-                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                    floatText.forEach((text) => {
-                        text.style.color = randomColor;
-                    });
-                });
-            });
-
-            // Automatically switch tabs and change floating text every 10 seconds
-            let activeTab = 0;
-            setInterval(() => {
-                activeTab = (activeTab + 1) % tabs.length;
-                tabs.forEach((t) => t.classList.remove("active"));
-                tabContents.forEach((content) => content.classList.remove("active"));
-                tabs[activeTab].classList.add("active");
-                tabContents[activeTab].classList.add("active");
-
-                // Change color of floating text
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                floatText.forEach((text) => {
-                    text.style.color = randomColor;
-                });
-            }, 10000); // 10000 milliseconds = 10 seconds
-        });
-    </script>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: aloknathtiwari2000@gmail.com</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 AlokNath Tiwari. All Rights Reserved.</p>
+    </footer>
 </body>
-
 </html>
-
-            
