@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlokNath Tiwari - Portfolio</title>
+    <title>AlokNath Tiwari - Data Engineer</title>
     <style>
         /* Global styles */
         body {
             font-family: 'Paprika', sans-serif;
             margin: 0;
             padding: 0;
-            color: silver;
-            background-image: url('advance.jpg');
+            color: silver; /* Set text color to silver */
+            background-image: url('advance.jpg'); /* Set the background image */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
         /* Header styles */
-        .header {
+        .cover {
             text-align: center;
-            padding: 20px 0;
+            padding: 50px 20px; /* Added padding to create space on the right */
             background-color: transparent;
             color: white;
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Align items with space between */
         }
 
         .profile-pic {
-            margin: 20px auto;
+            margin-right: 20px; /* Add margin to the right of the profile picture */
+            float: right;
         }
 
         .profile-pic img {
             border-radius: 50%;
-            width: 200px;
+            width: 200px; /* Larger profile picture */
             height: 200px;
             object-fit: cover;
             border: 4px solid #fff;
-            background-color: transparent;
+            background-color: transparent; /* Remove the background color */
         }
 
         /* Navigation styles */
         nav {
-            text-align: center;
-            background-color: transparent;
-            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(52, 152, 219, 0.7); /* Light blue with transparency */
+            padding: 10px 20px;
+            box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1); /* Shadow for the bottom */
+            z-index: 9999; /* Ensure the tabs appear above other content */
         }
 
         .tabs {
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            justify-content: center; /* Center align the tabs */
+            background-color: #3498db; /* Light blue background for tabs */
         }
 
         .tabs li {
-            display: inline-block;
             margin-right: 20px;
             cursor: pointer;
             font-size: 1.2em;
-            color: #3498db;
+            color: #fff;
             transition: all 0.3s ease;
         }
 
         .tabs li.active {
             font-weight: bold;
             color: #3498db;
+            background-color: #fff; /* White background for active tab */
+            border-radius: 5px; /* Optional: Add border radius */
+            padding: 5px 10px; /* Optional: Add padding */
         }
 
         /* Tab content styles */
         .tab-content {
             display: none;
             padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.7); /* Light transparent white background for tab content */
         }
 
         .tab-content.active {
@@ -93,39 +108,20 @@
             text-align: center;
             margin-top: 20px;
             line-height: 1.5;
+            background-color: #3498db; /* Light blue background */
+            padding: 10px; /* Optional: Add padding for better readability */
+            border-radius: 5px; /* Optional: Add border radius */
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Tab specific styles */
-        #about { background-color: #f9f9f9; }
-        #skills { background-color: #f0f0f0; }
-        #projects { background-color: #e9e9e9; }
-        #interests { background-color: #e0e0e0; }
-        #education { background-color: #d9d9d9; }
-        #contact { background-color: #d0d0d0; }
     </style>
 </head>
-<body>
-    <div class="header">
-        <h1>AlokNath Tiwari</h1>
-        <h2>Data Engineer</h2>
-    </div>
 
-    <div class="profile-pic">
-        <img src="Alok.jpg" alt="AlokNath Tiwari">
-    </div>
+<body>
+    <header class="cover">
+        <h1>AlokNath Tiwari - Data Engineer</h1>
+        <div class="profile-pic">
+            <img src="alok.jpg" alt="Alok Nath Tiwari">
+        </div>
+    </header>
 
     <nav>
         <ul class="tabs">
@@ -158,16 +154,18 @@
             </ul>
         </section>
 
-        <!-- Add other sections for projects, interests, education, and contact -->
         <section id="projects" class="tab-content">
             <h2 class="float-text">Projects</h2>
             <div class="project float-text">
                 <h3>Building Data Pipelines with Apache Airflow</h3>
-                <p>Orchestrated data pipelines for a medical billing desk project. Extracted data from various sources, transformed it using PySpark, and loaded it into a cloud SQL database. Managed data processing and storage using Apache Airflow.</p>
+                <p>Orchestrated data pipelines for a medical billing desk project.
+                    Extracted data from various sources, transformed it using PySpark, and loaded it into a cloud SQL database.
+                    Managed data processing and storage using Apache Airflow.</p>
             </div>
             <div class="project float-text">
                 <h3>Exploring Blockchain for Future Technology</h3>
-                <p>Researching and developing blockchain solutions for future technology applications. Building prototypes for secure and decentralized record management.</p>
+                <p>Researching and developing blockchain solutions for future technology applications.
+                    Building prototypes for secure and decentralized record management.</p>
             </div>
         </section>
 
@@ -208,16 +206,29 @@
         document.addEventListener("DOMContentLoaded", function () {
             const tabs = document.querySelectorAll(".tabs li");
             const tabContents = document.querySelectorAll(".tab-content");
+            const floatText = document.querySelectorAll(".float-text");
+
+            const colors = ["#fff", "#f0f8ff", "#f5f5dc", "#f0fff0", "#faebd7", "#f5f5f5", "#fffff0"];
 
             tabs.forEach((tab, index) => {
                 tab.addEventListener("click", () => {
+                    // Remove active class from all tabs and tab contents
                     tabs.forEach((t) => t.classList.remove("active"));
                     tabContents.forEach((content) => content.classList.remove("active"));
+
+                    // Add active class to the clicked tab and corresponding tab content
                     tab.classList.add("active");
                     tabContents[index].classList.add("active");
+
+                    // Change color of floating text
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    floatText.forEach((text) => {
+                        text.style.color = randomColor;
+                    });
                 });
             });
 
+            // Automatically switch tabs and change floating text every 10 seconds
             let activeTab = 0;
             setInterval(() => {
                 activeTab = (activeTab + 1) % tabs.length;
@@ -225,9 +236,16 @@
                 tabContents.forEach((content) => content.classList.remove("active"));
                 tabs[activeTab].classList.add("active");
                 tabContents[activeTab].classList.add("active");
-            }, 10000); // Change tab and floating data every 10 seconds
+
+                // Change color of floating text
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                floatText.forEach((text) => {
+                    text.style.color = randomColor;
+                });
+            }, 10000); // 10000 milliseconds = 10 seconds
         });
     </script>
 </body>
+
 </html>
 
