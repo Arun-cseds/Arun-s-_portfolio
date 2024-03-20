@@ -1,121 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlokNath Tiwari - Data Engineer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>AlokNath Tiwari - Portfolio</title>
     <style>
+        /* Global styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            color: #333; /* Set text color to dark grey */
+            background-color: #f9f9f9; /* Set background color to light grey */
         }
+
+        /* Header styles */
         header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
             text-align: center;
+            padding: 50px 20px;
+            background-color: #3498db; /* Set header background color to a shade of blue */
+            color: white;
         }
-        header h1 {
-            margin: 0;
+
+        .profile-pic {
+            margin-right: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 50%;
+            width: 100px; /* Set profile picture width to 100px */
+            height: 100px; /* Set profile picture height to 100px */
+            object-fit: cover;
+            border: 4px solid #fff;
         }
-        nav ul {
+
+        /* Navigation styles */
+        nav {
+            text-align: center;
+            background-color: #3498db; /* Set navigation background color to match header */
+            padding: 10px 0;
+        }
+
+        .tabs {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            background-color: #333;
-            text-align: center;
         }
-        nav ul li {
+
+        .tabs li {
             display: inline-block;
             margin-right: 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.2em;
             color: white;
-            padding: 10px 20px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
         }
-        nav ul li a:hover {
-            background-color: #555;
+
+        .tabs li.active {
+            font-weight: bold;
         }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        /* Tab content styles */
+        .tab-content {
+            display: none;
+            padding: 20px 0;
         }
-        footer {
-            background-color: #333;
-            color: white;
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Floating animation */
+        .float-text {
+            animation: floatText 10s infinite alternate; /* Change floating text every 10 seconds */
             text-align: center;
-            padding: 10px 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: 20px;
+            line-height: 1.5;
+            color: #333; /* Set floating text color to dark grey */
+        }
+
+        @keyframes floatText {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* About Me section */
+        .about {
+            padding: 50px 20px;
+            background-color: #fff; /* Set background color to white */
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+            border-radius: 5px; /* Add border radius */
+        }
+
+        /* Interests section */
+        .interests {
+            padding: 50px 20px;
+            background-color: #fff; /* Set background color to white */
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+            border-radius: 5px; /* Add border radius */
+        }
+
+        /* Education section */
+        .education {
+            padding: 50px 20px;
+            background-color: #fff; /* Set background color to white */
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+            border-radius: 5px; /* Add border radius */
+        }
+
+        /* Contact section */
+        .contact {
+            padding: 50px 20px;
+            background-color: #fff; /* Set background color to white */
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+            border-radius: 5px; /* Add border radius */
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>AlokNath Tiwari - Data Engineer</h1>
-        <img src="profile.jpg" alt="Profile Picture">
+        <div>
+            <img class="profile-pic" src="alok.jpg" alt="Alok Nath Tiwari">
+        </div>
+        <h1>AlokNath Tiwari</h1>
+        <h2>Data Engineer</h2>
     </header>
-    
+
     <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <ul class="tabs">
+            <li class="active" data-target="about"><a href="#">About Me</a></li>
+            <li data-target="skills"><a href="#">Skills</a></li>
+            <li data-target="projects"><a href="#">Projects</a></li>
+            <li data-target="interests"><a href="#">Interests</a></li>
+            <li data-target="education"><a href="#">Education</a></li>
+            <li data-target="contact"><a href="#">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm AlokNath Tiwari, a data engineer passionate about leveraging data for impactful insights. I specialize in Python, SQL, Apache Airflow, and Apache Spark.</p>
-    </section>
+    <div class="container">
+        <section id="about" class="tab-content active about">
+            <h2 class="float-text">About Me</h2>
+            <p class="float-text">I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change.</p>
+            <p class="float-text">My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements.</p>
+            <p class="float-text">I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology.</p>
+        </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Apache Airflow</li>
-            <li>Apache Spark</li>
-        </ul>
-    </section>
+        <section id="skills" class="tab-content">
+            <h2 class="float-text">Skills</h2>
+            <ul class="float-text">
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Docker</li>
+                <li>Apache Airflow</li>
+                <li>Apache Spark</li>
+                <li>Delta Lake</li>
+            </ul>
+        </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of Project 1.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of Project 2.</p>
-        </div>
-    </section>
+        <section id="projects" class="tab-content">
+            <h2 class="float-text">Projects</h2>
+            <div class="project float-text">
+                <h3>Building Data Pipelines with Apache Airflow</h3>
+                <p>Orchestrated data pipelines for a medical billing desk<p>Extracted data from various sources, transformed it using PySpark, and loaded it into a cloud SQL database.Managed data processing and storage using Apache Airflow.</p>
+            </div>
+            <div class="project float-text">
+                <h3>Exploring Blockchain for Future Technology</h3>
+                <p>Researching and developing blockchain solutions for future technology applications.Building prototypes for secure and decentralized record management.</p>
+            </div>
+        </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <p>Master's in Computer Applications (MCA) - Chhatrapati Shivaji Maharaj University</p>
-        <p>Bachelor's in Computer Applications (BCA) - Chhatrapati Shivaji Maharaj University</p>
-    </section>
+        <section id="interests" class="tab-content interests">
+            <h2 class="float-text">Interests</h2>
+            <ul class="float-text">
+                <li>Data Engineering</li>
+                <li>AI</li>
+                <li>Blockchain Technology</li>
+                <li>Web3.0</li>
+            </ul>
+        </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: aloknathtiwari2000@gmail.com</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2024 AlokNath Tiwari. All Rights Reserved.</p>
-    </footer>
+        <section id="education" class="tab-content education">
+            <h2 class="float-text">Education</h2>
+            <ul class="float-text">
+                <li>
+                    <strong>Master's in Computer Applications (MCA)</strong><br>
+                    Chhatrapati Shivaji Maharaj University<br>
+                    Present
+                </li>
+                <li>
+                    <strong>Bachelor's in Computer Applications (BCA)</strong><br>
+                    Chhatrapati Shivaji Maharaj University<br>
+                    Graduated
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact" class="tab-content contact">
+            <h2 class="float-text">Contact</h2>
+            <p class="float-text">Email: aloknathtiwari2000@gmail.com</p>
+            <p class="float-text">LinkedIn: <a href="https://www.linkedin.com/in/aloknathtiwari">linkedin.com/in/aloknathtiwari</a></p>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript code
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tabs li");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener("click", () => {
+                    // Remove active class from all tabs and tab contents
+                    tabs.forEach((t) => t.classList.remove("active"));
+                    tabContents.forEach((content) => content.classList.remove("active"));
+
+                    // Add active class to the clicked tab and corresponding tab content
+                    tab.classList.add("active");
+                    tabContents[index].classList.add("active");
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
+
