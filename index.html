@@ -1,221 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlokNath Tiwari - Portfolio</title>
-    <style>
-        /* Global styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333; /* Set text color to dark grey */
-            background-color: #f9f9f9; /* Set background color to light grey */
-        }
-
-        /* Header styles */
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #3498db; /* Set header background color to a shade of blue */
-            color: white;
-        }
-
-        .profile-pic {
-            margin-right: 20px;
-            display: inline-block;
-            vertical-align: middle;
-            border-radius: 50%;
-            width: 100px; /* Set profile picture width to 100px */
-            height: 100px; /* Set profile picture height to 100px */
-            object-fit: cover;
-            border: 4px solid #fff;
-        }
-
-        /* Navigation styles */
-        nav {
-            text-align: center;
-            background-color: #3498db; /* Set navigation background color to match header */
-            padding: 10px 0;
-        }
-
-        .tabs {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .tabs li {
-            display: inline-block;
-            margin-right: 20px;
-            cursor: pointer;
-            font-size: 1.2em;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .tabs li.active {
-            font-weight: bold;
-        }
-
-        /* Tab content styles */
-        .tab-content {
-            display: none;
-            padding: 20px 0;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Floating animation */
-        .float-text {
-            animation: floatText 10s infinite alternate; /* Change floating text every 10 seconds */
-            text-align: center;
-            margin-top: 20px;
-            line-height: 1.5;
-            color: #333; /* Set floating text color to dark grey */
-        }
-
-        @keyframes floatText {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* About Me section */
-        .about {
-            padding: 50px 20px;
-            background-color: #fff; /* Set background color to white */
-            margin: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
-            border-radius: 5px; /* Add border radius */
-        }
-
-        /* Interests section */
-        .interests {
-            padding: 50px 20px;
-            background-color: #fff; /* Set background color to white */
-            margin: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
-            border-radius: 5px; /* Add border radius */
-        }
-
-        /* Education section */
-        .education {
-            padding: 50px 20px;
-            background-color: #fff; /* Set background color to white */
-            margin: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
-            border-radius: 5px; /* Add border radius */
-        }
-
-        /* Contact section */
-        .contact {
-            padding: 50px 20px;
-            background-color: #fff; /* Set background color to white */
-            margin: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
-            border-radius: 5px; /* Add border radius */
-        }
-    </style>
+    <title>Aloknath Tiwari's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <header>
-        <div>
-            <img class="profile-pic" src="alok.jpg" alt="Alok Nath Tiwari">
+        <div class="container">
+            <h1>Aloknath Tiwari</h1>
+            <p>Data Engineer | Blockchain Enthusiast</p>
+            <div class="contact-info">
+                <p>📞 800-796-7314</p>
+                <p>📧 <a href="mailto:aloknathtiwari2000@gmail.com">aloknathtiwari2000@gmail.com</a></p>
+                <p>🔗 <a href="https://www.linkedin.com/in/aloknathtiwari" target="_blank">linkedin.com/in/aloknathtiwari</a></p>
+            </div>
         </div>
-        <h1>AlokNath Tiwari</h1>
-        <h2>Data Engineer</h2>
     </header>
 
-    <nav>
-        <ul class="tabs">
-            <li class="active" data-target="about"><a href="#">About Me</a></li>
-            <li data-target="skills"><a href="#">Skills</a></li>
-            <li data-target="projects"><a href="#">Projects</a></li>
-            <li data-target="interests"><a href="#">Interests</a></li>
-            <li data-target="education"><a href="#">Education</a></li>
-            <li data-target="contact"><a href="#">Contact</a></li>
+    <section id="summary" class="container">
+        <h2>Summary</h2>
+        <p>Results-driven <strong>Data Engineer</strong> with a robust background in software engineering and a deep passion for <strong>blockchain technology</strong> and <strong>data engineering</strong>. Known for leveraging expertise in <strong>Apache Spark</strong>, <strong>PostgreSQL</strong>, and <strong>Django</strong> to build scalable solutions and streamline data workflows. Adept at implementing <strong>data pipelines</strong> and <strong>automation</strong> using <strong>Airflow</strong> and <strong>Docker</strong>. Currently pursuing a <strong>Master's in Computer Applications (MCA)</strong>, committed to driving innovation and optimizing data-driven strategies.</p>
+    </section>
+
+    <section id="education" class="container">
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <strong>Chhatrapati Shivaji Maharaj University, Panvel</strong>
+                <p>Master's in Computer Applications (MCA) (In Progress)</p>
+            </li>
+            <li>
+                <strong>Chhatrapati Shivaji Maharaj University, Panvel</strong>
+                <p>Bachelor's in Computer Applications (BCA)</p>
+            </li>
         </ul>
-    </nav>
+    </section>
 
-    <div class="container">
-        <section id="about" class="tab-content active about">
-            <h2 class="float-text">About Me</h2>
-            <p class="float-text">I'm AlokNath Tiwari, a data engineer deeply passionate about Web3.0 and AI. My ambition is to create intelligent applications that transform how businesses and individuals interact with technology. I believe in integrating blockchain, artificial intelligence, and the web to develop innovative solutions that drive meaningful change.</p>
-            <p class="float-text">My journey in data engineering began with a course that sparked my interest in leveraging data for impactful insights. I'm fascinated by blockchain technology and its potential to revolutionize industries. With a strong foundation in software engineering, I'm committed to continuous learning to stay at the forefront of technological advancements.</p>
-            <p class="float-text">I prioritize data engineering because I believe it is fundamental for working with large datasets and developing impactful solutions. My goal is to develop solutions that not only meet current needs but also anticipate future challenges, making a lasting impact in the field of technology.</p>
-        </section>
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <ul id="skills-list">
+            <!-- Skills will be injected here by JavaScript -->
+        </ul>
+    </section>
 
-        <section id="skills" class="tab-content">
-            <h2 class="float-text">Skills</h2>
-            <ul class="float-text">
-                <li>Python</li>
-                <li>SQL</li>
-                <li>Docker</li>
-                <li>Apache Airflow</li>
-                <li>Apache Spark</li>
-                <li>Delta Lake</li>
-            </ul>
-        </section>
+    <section id="experience" class="container">
+        <h2>Experience</h2>
+        <ul id="experience-list">
+            <!-- Experience will be injected here by JavaScript -->
+        </ul>
+    </section>
 
-        <section id="projects" class="tab-content">
-            <h2 class="float-text">Projects</h2>
-            <div class="project float-text">
-                <h3>Building Data Pipelines with Apache Airflow</h3>
-                <p>Orchestrated data pipelines for a medical billing desk to efficiently process and manage medical billing records. The pipelines were designed to ingest data from various sources,                transform it using PySpark, and load it into a cloud SQL database. Managed data processing and storage using Apache Airflow.</p>
-            </div>
-            <div class="project float-text">
-                <h3>Exploring Blockchain for Future Technology</h3>
-                <p>Researched and implemented blockchain technology to explore its potential applications in future technology. Studied various blockchain platforms and developed prototypes to demonstrate use cases in different industries.</p>
-            </div>
-        </section>
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <ul id="projects-list">
+            <!-- Projects will be injected here by JavaScript -->
+        </ul>
+    </section>
 
-        <section id="interests" class="tab-content">
-            <h2 class="float-text">Interests</h2>
-            <ul class="float-text">
-                <li>Web3.0</li>
-                <li>AI</li>
-                <li>Data Engineering</li>
-                <li>Blockchain Technology</li>
-            </ul>
-        </section>
+    <section id="certifications" class="container">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Data Engineering Course Completion</li>
+            <li>Apache Spark Certification</li>
+        </ul>
+    </section>
 
-        <section id="education" class="tab-content education">
-            <h2 class="float-text">Education</h2>
-            <ul class="float-text">
-                <li>
-                    <strong>Master's in Computer Applications (MCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br>
-                    Present
-                </li>
-                <li>
-                    <strong>Bachelor's in Computer Applications (BCA)</strong><br>
-                    Chhatrapati Shivaji Maharaj University<br>
-                    Graduated
-                </li>
-            </ul>
-        </section>
+    <section id="interests" class="container">
+        <h2>Interests</h2>
+        <ul>
+            <li>Blockchain Technology</li>
+            <li>Data Engineering Trends</li>
+            <li>Continuous Learning and Skill Development</li>
+        </ul>
+    </section>
 
-        <section id="contact" class="tab-content contact">
-            <h2 class="float-text">Contact</h2>
-            <p class="float-text">Email: aloknathtiwari2000@gmail.com</p>
-            <p class="float-text">LinkedIn: <a href="linkedin.com/in/aloknathtiwari">linkedin.com/in/aloknathtiwari</a></p>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 AlokNath Tiwari. All Rights Reserved.</p>
+    <footer class="container">
+        <p>Feel free to reach out to discuss potential opportunities or collaborations!</p>
     </footer>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>
 
