@@ -4,7 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aloknath Tiwari's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2em 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 0.5em 0;
+            font-size: 1.2em;
+        }
+
+        .contact-info p {
+            margin: 0.2em 0;
+            font-size: 1em;
+        }
+
+        .contact-info a {
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 2em;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -40,23 +111,17 @@
 
     <section id="skills" class="container">
         <h2>Skills</h2>
-        <ul id="skills-list">
-            <!-- Skills will be injected here by JavaScript -->
-        </ul>
+        <ul id="skills-list"></ul>
     </section>
 
     <section id="experience" class="container">
         <h2>Experience</h2>
-        <ul id="experience-list">
-            <!-- Experience will be injected here by JavaScript -->
-        </ul>
+        <ul id="experience-list"></ul>
     </section>
 
     <section id="projects" class="container">
         <h2>Projects</h2>
-        <ul id="projects-list">
-            <!-- Projects will be injected here by JavaScript -->
-        </ul>
+        <ul id="projects-list"></ul>
     </section>
 
     <section id="certifications" class="container">
@@ -80,7 +145,104 @@
         <p>Feel free to reach out to discuss potential opportunities or collaborations!</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const skills = [
+                'Apache Spark', 'PostgreSQL', 'PySpark', 'Delta Lake',
+                'Django', 'Docker', 'Python',
+                'pgAdmin 4', 'Database Keys', 'Integrity Constraints',
+                'Airflow', 'Astro CLI',
+                'Git',
+                'Ubuntu', 'Virtual Environments'
+            ];
+
+            const experiences = [
+                {
+                    title: 'Django Web Application Developer',
+                    details: [
+                        'Developed a Django web application with a virtual environment setup.',
+                        'Implemented features such as search functionality to fetch data from Wikipedia.'
+                    ]
+                },
+                {
+                    title: 'PostgreSQL Management',
+                    details: [
+                        'Managed PostgreSQL databases using pgAdmin 4.',
+                        'Resolved authentication issues and configured database connections.'
+                    ]
+                },
+                {
+                    title: 'Data Engineer Intern',
+                    details: [
+                        'Worked with large datasets using PySpark for efficient data processing.',
+                        'Integrated PostgreSQL with Spark for data storage and retrieval.'
+                    ]
+                },
+                {
+                    title: 'Trainee at Tricera.tech',
+                    details: [
+                        'Gaining practical experience and enhancing skills in Delta Lake technologies.',
+                        'Collaborating on projects to implement advanced data solutions and optimize workflows.'
+                    ]
+                }
+            ];
+
+            const projects = [
+                {
+                    title: "Django Project: 'myproject'",
+                    details: [
+                        'Created a search bar to fetch and display Wikipedia articles.',
+                        'Implemented template loading and troubleshooting.'
+                    ]
+                },
+                {
+                    title: 'Data Engineering with Docker and PostgreSQL',
+                    details: [
+                        'Set up and managed Docker containers for PostgreSQL.',
+                        'Utilized Docker for environment consistency and easy deployment.'
+                    ]
+                },
+                {
+                    title: 'Airflow Automation',
+                    details: [
+                        'Used Astro CLI for managing Airflow projects.',
+                        'Automated data pipeline tasks to streamline workflows.'
+                    ]
+                }
+            ];
+
+            const skillsList = document.getElementById('skills-list');
+            const experienceList = document.getElementById('experience-list');
+            const projectsList = document.getElementById('projects-list');
+
+            skills.forEach(skill => {
+                const li = document.createElement('li');
+                li.textContent = skill;
+                skillsList.appendChild(li);
+            });
+
+            experiences.forEach(exp => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${exp.title}</strong>`;
+                exp.details.forEach(detail => {
+                    const p = document.createElement('p');
+                    p.textContent = detail;
+                    li.appendChild(p);
+                });
+                experienceList.appendChild(li);
+            });
+
+            projects.forEach(project => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${project.title}</strong>`;
+                project.details.forEach(detail => {
+                    const p = document.createElement('p');
+                    p.textContent = detail;
+                    li.appendChild(p);
+                });
+                projectsList.appendChild(li);
+            });
+        });
+    </script>
 </body>
 </html>
-
