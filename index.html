@@ -3,246 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aloknath Tiwari's Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 2em 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        header p {
-            margin: 0.5em 0;
-            font-size: 1.2em;
-        }
-
-        .contact-info p {
-            margin: 0.2em 0;
-            font-size: 1em;
-        }
-
-        .contact-info a {
-            color: #f4f4f4;
-            text-decoration: none;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 2em auto;
-            padding: 2em;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5em;
-            margin-bottom: 1em;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 1em;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1em 0;
-            background-color: #333;
-            color: #fff;
-        }
-
-        footer p {
-            margin: 0;
-        }
-    </style>
+    <title>Aloknath Tiwari's Resume</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <header class="cover text-center">
+            <div class="profile-pic">
+                <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Aloknath Tiwari">
+            </div>
             <h1>Aloknath Tiwari</h1>
-            <p>Data Engineer | Blockchain Enthusiast</p>
-            <div class="contact-info">
-                <p>📞 800-796-7314</p>
-                <p>📧 <a href="mailto:aloknathtiwari2000@gmail.com">aloknathtiwari2000@gmail.com</a></p>
-                <p>🔗 <a href="https://www.linkedin.com/in/aloknathtiwari" target="_blank">linkedin.com/in/aloknathtiwari</a></p>
+            <p class="subtitle">Data Engineer</p>
+        </header>
+
+        <ul class="tabs">
+            <li class="tab active" data-tab="summary">Summary</li>
+            <li class="tab" data-tab="education">Education</li>
+            <li class="tab" data-tab="skills">Skills</li>
+            <li class="tab" data-tab="experience">Experience</li>
+            <li class="tab" data-tab="certifications">Certifications</li>
+            <li class="tab" data-tab="interests">Interests</li>
+            <li class="tab" data-tab="contact">Contact</li>
+        </ul>
+
+        <div class="tab-content active" id="summary">
+            <h1 class="highlight-alternate">Summary:</h1>
+            <p>Strategic and results-oriented Data Engineer with a profound expertise in data engineering. Demonstrated ability to architect and implement robust data solutions leveraging Apache Spark, PostgreSQL, and Django. Proficient in developing and optimizing data pipelines and driving automation with Airflow and Docker. Currently advancing my knowledge through a Master's in Computer Applications (MCA), committed to spearheading data-driven innovations and enhancing organizational efficiency.</p>
+        </div>
+
+        <div class="tab-content" id="education">
+            <h1 class="highlight-alternate">Education:</h1>
+            <p><strong class="highlight">College:- Chhatrapati Shivaji Maharaj University, Panvel</strong></p>
+            <p>Master's in Computer Applications (MCA) (In Progress)</p>
+            <p>Bachelor's in Computer Applications (BCA)</p>
+        </div>
+
+        <div class="tab-content" id="skills">
+            <h1 class="highlight-alternate">Skills:</h1>
+            <p>Data Engineering: Apache Spark, PostgreSQL, and PySpark</p>
+            <p>Software Development: Django, Docker, and Python</p>
+            <p>Database Management:  pgAdmin 4, Database Keys, and Integrity Constraints</p>
+            <p>Automation & Orchestration: Airflow and Astro CLI</p>
+            <p>Version Control: Git</p>
+            <p>Others: Ubuntu and Virtual Environments</p>
+        </div>
+
+        <div class="tab-content" id="experience">
+            <h1 class="highlight-alternate">Experience:</h1>
+            <div class="project">
+                <h3>Django Web Application Developer:</h3>
+                <p>Engineered a sophisticated Django web application utilizing a meticulously crafted virtual environment.</p>
+                <p>Designed and integrated a high-performance search functionality to dynamically retrieve and display data from Wikipedia.</p>
+            </div>
+            <div class="project">
+                <h3>PostgreSQL Management:</h3>
+                <p>Expertly managed and optimized PostgreSQL databases using pgAdmin 4.</p>
+                <p>Strategically resolved complex authentication challenges and optimized database connections.</p>
+            </div>
+            <div class="project">
+                <h3>Data Engineer Intern:</h3>
+                <p>Leveraged PySpark to efficiently process large-scale datasets and drive data insights.</p>
+                <p>Integrated PostgreSQL with Spark, facilitating streamlined data storage and retrieval processes.</p>
             </div>
         </div>
-    </header>
 
-    <section id="summary" class="container">
-        <h2>Summary</h2>
-        <p>Results-driven <strong>Data Engineer</strong> with a robust background in software engineering and a deep passion for <strong>blockchain technology</strong> and <strong>data engineering</strong>. Known for leveraging expertise in <strong>Apache Spark</strong>, <strong>PostgreSQL</strong>, and <strong>Django</strong> to build scalable solutions and streamline data workflows. Adept at implementing <strong>data pipelines</strong> and <strong>automation</strong> using <strong>Airflow</strong> and <strong>Docker</strong>. Currently pursuing a <strong>Master's in Computer Applications (MCA)</strong>, committed to driving innovation and optimizing data-driven strategies.</p>
-    </section>
+        <div class="tab-content" id="certifications">
+            <h1 class="highlight-alternate">Certifications:</h1>
+            <p>Data Engineering Course Completion</p>
+            <p>Apache Spark Certification</p>
+        </div>
 
-    <section id="education" class="container">
-        <h2>Education</h2>
-        <ul>
-            <li>
-                <strong>Chhatrapati Shivaji Maharaj University, Panvel</strong>
-                <p>Master's in Computer Applications (MCA) (In Progress)</p>
-            </li>
-            <li>
-                <strong>Chhatrapati Shivaji Maharaj University, Panvel</strong>
-                <p>Bachelor's in Computer Applications (BCA)</p>
-            </li>
-        </ul>
-    </section>
+        <div class="tab-content" id="interests">
+            <h1 class="highlight-alternate">Interests:</h1>
+            <p>Emerging Data Engineering Trends</p>
+            <p>Pioneering Continuous Learning and Skill Development</p>
+        </div>
 
-    <section id="skills" class="container">
-        <h2>Skills</h2>
-        <ul id="skills-list"></ul>
-    </section>
-
-    <section id="experience" class="container">
-        <h2>Experience</h2>
-        <ul id="experience-list"></ul>
-    </section>
-
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-        <ul id="projects-list"></ul>
-    </section>
-
-    <section id="certifications" class="container">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Data Engineering Course Completion</li>
-            <li>Apache Spark Certification</li>
-        </ul>
-    </section>
-
-    <section id="interests" class="container">
-        <h2>Interests</h2>
-        <ul>
-            <li>Blockchain Technology</li>
-            <li>Data Engineering Trends</li>
-            <li>Continuous Learning and Skill Development</li>
-        </ul>
-    </section>
-
-    <footer class="container">
-        <p>Feel free to reach out to discuss potential opportunities or collaborations!</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const skills = [
-                'Apache Spark', 'PostgreSQL', 'PySpark', 'Delta Lake',
-                'Django', 'Docker', 'Python',
-                'pgAdmin 4', 'Database Keys', 'Integrity Constraints',
-                'Airflow', 'Astro CLI',
-                'Git',
-                'Ubuntu', 'Virtual Environments'
-            ];
-
-            const experiences = [
-                {
-                    title: 'Django Web Application Developer',
-                    details: [
-                        'Developed a Django web application with a virtual environment setup.',
-                        'Implemented features such as search functionality to fetch data from Wikipedia.'
-                    ]
-                },
-                {
-                    title: 'PostgreSQL Management',
-                    details: [
-                        'Managed PostgreSQL databases using pgAdmin 4.',
-                        'Resolved authentication issues and configured database connections.'
-                    ]
-                },
-                {
-                    title: 'Data Engineer Intern',
-                    details: [
-                        'Worked with large datasets using PySpark for efficient data processing.',
-                        'Integrated PostgreSQL with Spark for data storage and retrieval.'
-                    ]
-                },
-                {
-                    title: 'Trainee at Tricera.tech',
-                    details: [
-                        'Gaining practical experience and enhancing skills in Delta Lake technologies.',
-                        'Collaborating on projects to implement advanced data solutions and optimize workflows.'
-                    ]
-                }
-            ];
-
-            const projects = [
-                {
-                    title: "Django Project: 'myproject'",
-                    details: [
-                        'Created a search bar to fetch and display Wikipedia articles.',
-                        'Implemented template loading and troubleshooting.'
-                    ]
-                },
-                {
-                    title: 'Data Engineering with Docker and PostgreSQL',
-                    details: [
-                        'Set up and managed Docker containers for PostgreSQL.',
-                        'Utilized Docker for environment consistency and easy deployment.'
-                    ]
-                },
-                {
-                    title: 'Airflow Automation',
-                    details: [
-                        'Used Astro CLI for managing Airflow projects.',
-                        'Automated data pipeline tasks to streamline workflows.'
-                    ]
-                }
-            ];
-
-            const skillsList = document.getElementById('skills-list');
-            const experienceList = document.getElementById('experience-list');
-            const projectsList = document.getElementById('projects-list');
-
-            skills.forEach(skill => {
-                const li = document.createElement('li');
-                li.textContent = skill;
-                skillsList.appendChild(li);
-            });
-
-            experiences.forEach(exp => {
-                const li = document.createElement('li');
-                li.innerHTML = `<strong>${exp.title}</strong>`;
-                exp.details.forEach(detail => {
-                    const p = document.createElement('p');
-                    p.textContent = detail;
-                    li.appendChild(p);
-                });
-                experienceList.appendChild(li);
-            });
-
-            projects.forEach(project => {
-                const li = document.createElement('li');
-                li.innerHTML = `<strong>${project.title}</strong>`;
-                project.details.forEach(detail => {
-                    const p = document.createElement('p');
-                    p.textContent = detail;
-                    li.appendChild(p);
-                });
-                projectsList.appendChild(li);
-            });
-        });
-    </script>
+        <div class="tab-content" id="contact">
+            <h1 class="highlight-alternate">Contact Information:</h1>
+            <p>Phone: 800-796-7314</p>
+            <p>Email: <a href="mailto:aloknathtiwari2000@gmail.com">aloknathtiwari2000@gmail.com</a></p>
+            <p>LinkedIn:<a href="https://linkedin.com/in/aloknathtiwari" target="_blank">linkedin.com/in/aloknathtiwari</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
