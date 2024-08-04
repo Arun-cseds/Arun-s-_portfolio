@@ -1,3 +1,4 @@
+/* Existing CSS styles */
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap');
 
 :root {
@@ -11,121 +12,105 @@
 
 body {
     font-family: var(--font);
-    background: url("https://images.unsplash.com/photo-1672009190560-12e7bade8d09");
-    background-repeat: no-repeat;
+    background: url("https://images.unsplash.com/photo-1672009190560-12e7bade8d09") no-repeat center center fixed;
     background-size: cover;
-    background-attachment: fixed;
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    line-height: 1.6;
+    margin: 0;
     color: #fff;
 }
 
 .container {
-    max-width: 700px;
+    display: flex;
     width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.4); /* Slightly darker background for contrast */
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
-    overflow: hidden;
-    outline: 4px solid rgba(255, 255, 255, 0.6); /* Extra outline */
-    outline-offset: 2px; /* Offset for better visibility */
-    padding: 20px; /* Padding to ensure content does not touch the outline */
-    position: relative; /* For proper positioning of pseudo-elements */
+    padding: 20px;
 }
 
 .tabs {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Fixed position on the left side */
+    top: 0;
+    left: 0;
+    width: 200px; /* Width of the tabs container */
+    height: 100vh; /* Full height */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border-right: 2px solid rgba(255, 255, 255, 0.4); /* Border on the right side */
+    overflow-y: auto; /* Scroll if content overflows */
 }
 
 .tabs li {
-    display: inline-block;
-    padding: 10px 15px;
+    padding: 15px; /* Increased padding for better spacing */
     cursor: pointer;
-    margin-bottom: -2px;
-    font-weight: 400;
-    transition: background-color 0.3s;
+    font-weight: bold; /* Make tab names bold */
+    font-size: 16px; /* Adjust font size for better readability */
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 1px solid transparent; /* Border for active state */
 }
 
 .tabs li.active {
-    border-bottom: 2px solid;
-    border-image: var(--bg);
-    border-image-slice: 1;
+    background: rgba(0, 0, 0, 0.7); /* Highlight the active tab */
+    color: #5ebb79; /* Active tab text color */
+    border-left: 3px solid #5ebb79; /* Highlight the active tab with a left border */
 }
 
 .tab-content {
-    display: none;
-    padding: 20px 0;
+    margin-left: 220px; /* Offset to make space for tabs + additional space */
+    padding: 20px;
+    min-height: 600px; /* Minimum height for tab content */
+    width: calc(100% - 220px); /* Adjust width considering the tab width */
+    overflow-y: auto; /* Scroll if content overflows */
+    background: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background */
+    border-radius: 10px;
+    display: none; /* Hide all tab content by default */
 }
 
 .tab-content.active {
-    display: block;
+    display: block; /* Show only the active tab content */
 }
 
-.cover {
+.profile-section {
     display: flex;
-    justify-content: center;
-    align-items: end;
-    height: 150px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
-    margin-bottom: 35px;
-    background: rgba(0, 0, 0, 0.3);
-    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='29' height='50.115' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='M14.5 6.628L8.886 3.372v-6.515L14.502-6.4l5.612 3.257-.001 6.514zm0 50.06l-5.613-3.256v-6.515l5.614-3.258 5.612 3.257-.001 6.515zm14.497-25.117l-5.612-3.257v-6.515L29 18.541l5.612 3.257-.001 6.515zm-29 0l-5.612-3.257v-6.515L0 18.541l5.612 3.257v6.515zM14.5 11.82L4.36 5.967l.002-11.706 10.14-5.855L24.638-5.74l-.001 11.707zm0 50.06L4.36 56.028l.002-11.706 10.14-5.855 10.137 5.852-.001 11.707zm14.498-25.118L18.858 30.91l.002-11.707L29 13.349l10.137 5.853-.001 11.706zm-29 0l-10.139-5.852.002-11.707L0 13.349l10.138 5.853-.002 11.706zm14.501-19.905L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z'  stroke-linecap='square' stroke-width='1' stroke='hsla(0, 0%, 87%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.cover .profile-pic {
-    max-width: 120px;
-    max-height: 120px;
+.profile-pic {
+    width: 120px;
+    height: 120px;
     padding: 3px;
     background-image: var(--bg);
-    margin-bottom: -25px;
-    border-radius: 50%;
+    border-radius: 10%; /* Square shape with rounded corners */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 20px;
 }
 
-.cover .profile-pic img {
-    max-width: 110px;
-    border-radius: 50%;
+.profile-pic img {
+    width: 110px;
+    height: 110px;
+    border-radius: 10%; /* Square shape with rounded corners */
 }
 
-.text-center {
-    text-align: center;
-}
-
-h1 {
-    font-size: 34px;
-    color: #000; /* Black text color */
-    margin-bottom: 5px;
-    background: #c1e1c1; /* White background */
-    padding: 10px; /* Padding for better readability */
-    border-radius: 5px; /* Rounded corners for the background */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-}
-
-.subtitle {
-    color: #000; /* Black text color */
-    font-size: 20px; /* Adjust size if needed */
+.profile-text h1, .profile-text p {
     margin: 0;
-    margin-bottom: 15px;
-    font-weight: 400;
-    background: #c1e1c1; /* White background */
-    padding: 5px; /* Padding for better readability */
-    border-radius: 4px; /* Rounded corners for the background */
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
-
-.main {
-    padding: 20px;
+.profile-text h1 {
+    font-size: 34px;
     color: #fff;
+}
+
+.profile-text p {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 400;
 }
 
 .tab-content strong {
@@ -138,167 +123,4 @@ h1 {
     margin-bottom: 10px;
     text-align: justify;
     line-height: 1.6;
-}
-
-input,
-select,
-textarea {
-    font-family: var(--font);
-    background: rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(15px) saturate(130%);
-    width: 100%;
-    padding: 12px;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    color: #fff;
-    outline: none;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-input::placeholder,
-select::placeholder,
-textarea::placeholder {
-    color: #fff;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: #5ebb79;
-    box-shadow: 0 0 3px rgba(94, 184, 134, 0.5);
-}
-
-button {
-    font-family: var(--font);
-    background-color: #5ebb79;
-    background-image: linear-gradient(180deg,
-            rgba(255, 255, 255, 0.15),
-            rgba(255, 255, 255, 0));
-    border-color: #5ebb79;
-    width: 100%;
-    color: #0f1623;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-button:hover {
-    background-color: #4cb36a;
-    border-color: #4cb36a;
-}
-
-@media (max-width: 399px) {
-    .cover .profile-pic {
-        max-width: 110px;
-        max-height: 110px;
-    }
-
-    .cover .profile-pic img {
-        max-width: 100px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    .tabs li {
-        padding: 8px;
-    }
-
-    .main {
-        padding: 15px;
-    }
-
-    .tab-content {
-        padding: 15px 0;
-    }
-}
-
-@media (max-width: 767px) {
-    .tabs li {
-        font-size: 14px;
-    }
-
-    .cover {
-        height: 120px;
-    }
-
-    .cover .profile-pic {
-        max-width: 100px;
-        max-height: 100px;
-    }
-
-    .cover .profile-pic img {
-        max-width: 90px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .main {
-        padding: 15px;
-    }
-
-    .tab-content {
-        padding: 15px 0;
-    }
-}
-
-.button {
-    display: inline-block;
-    background-color: #5ebb79;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 700;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #4cb36a;
-}
-
-.project {
-    margin-bottom: 20px;
-}
-
-.project h3 {
-    margin-top: 0;
-}
-
-.tagline {
-    font-style: italic;
-    color: #ddd;
-}
-
-.header .cover {
-    background-image: url('https://images.unsplash.com/photo-1542744176-b17d0d85e334');
-    background-size: cover;
-}
-.highlight {
-    background-color: #e0b3ff; /* Light purple background */
-    color: #4a0072; /* Dark purple text color */
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: 700;
-    display: inline;
-}
-
-.highlight-alternate {
-    background-color: #3498db; /* Blue background for the alternate highlight */
-    color: #fff; /* White text color */
-    padding: 4px 8px; /* Padding for better visibility */
-    border-radius: 4px; /* Rounded corners */
-    font-weight: bold; /* Bold text */
-    display: inline; /* Inline display to keep the text flow intact */
 }
