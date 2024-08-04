@@ -1,40 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tab');
-    const tabContents = document.querySelectorAll('.tab-content');
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.tabs li');
+    const contents = document.querySelectorAll('.tab-content');
+    let currentIndex = 0;
 
-    let activeIndex = 0;
-    let autoSwitchInterval;
-
-    function switchTab(index) {
-        tabs.forEach((tab, i) => {
-            tab.classList.toggle('active', i === index);
-        });
-        tabContents.forEach((content, i) => {
-            content.classList.toggle('active', i === index);
-        });
-        activeIndex = index; // Update activeIndex when switching manually
+    function showTab(index) {
+        tabs.forEach(tab => tab.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+        tabs[index].classList.add('active');
+        contents[index].classList.add('active');
     }
 
-    function startAutoSwitch() {
-        autoSwitchInterval = setInterval(() => {
-            activeIndex = (activeIndex + 1) % tabs.length;
-            switchTab(activeIndex);
-        }, 5000); // Switch every 5 seconds
+    function autoSwitchTabs() {
+        currentIndex = (currentIndex + 1) % tabs.length;
+        showTab(currentIndex);
     }
 
-    function stopAutoSwitch() {
-        clearInterval(autoSwitchInterval);
-    }
+    setInterval(autoSwitchTabs, 10000); // Switch every 10 seconds
 
     tabs.forEach((tab, index) => {
         tab.addEventListener('click', () => {
-            stopAutoSwitch(); // Stop auto-switching when a tab is clicked
-            switchTab(index);
-            startAutoSwitch(); // Restart auto-switching after click
+            currentIndex = index;
+            showTab(index);
         });
     });
 
-    // Initialize
-    switchTab(activeIndex);
-    startAutoSwitch();
+    showTab(currentIndex);
 });
